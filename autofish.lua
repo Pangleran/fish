@@ -61,7 +61,7 @@ function AutoFish.Aktif()
   end)
 end
 
-function StopAutoFishV2()
+function AutoFish.Nonaktif()
     FuncAutoFishV2.autofishV2 = false
     FuncAutoFishV2.fishingActiveV2 = false
     FuncAutoFishV2.delayInitializedV2 = false
