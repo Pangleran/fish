@@ -1,3 +1,3 @@
 local AntiAfk = {}
 
-function 
+function AntiAfk.Apply()
