@@ -23,7 +23,7 @@ Teleport:CreateButton({
 Teleport:CreateButton({
     Name = "Teleport to Creater",
     Callback = function()
-        TeleportModule.ToOcean()
+        TeleportModule.ToCreater()
     end,
 })
 
