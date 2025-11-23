@@ -1,36 +1,7 @@
--- autofish.lua (FIXED)
+-- autofish.lua
 local AutoFish = {}
 
-local services = {
-    game = game,
-    workspace = workspace,
-    Players = game:GetService("Players"),
-    RunService = game:GetService("RunService"),
-    ReplicatedStorage = game:GetService("ReplicatedStorage"),
-    HttpService = game:GetService("HttpService")
-}
-for serviceName, service in pairs(services) do
-    if not service then
-        error("Critical service missing: " .. serviceName)
-    end
-end
-
-local LocalPlayer = game:GetService("Players").LocalPlayer
-if not LocalPlayer then
-    error("LocalPlayer not available")
-end
-
-return true
-end)
-
-if not success then
-error("âŒ [Auto Fish] Critical dependency check failed: " .. tostring(errorMsg))
-return
-end
-
--- ====================================================================
---                        CORE SERVICES
--- ====================================================================
+-- CORE SERVICES
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -38,76 +9,74 @@ local HttpService = game:GetService("HttpService")
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = Players.LocalPlayer
 
+if not LocalPlayer then
+error("[AutoFish] LocalPlayer not found!")
+end
+
+-- CONFIG & EVENTS (HARUS DIISI SESUAI GAME)
+local Events = {
+equip = ReplicatedStorage:WaitForChild("Equip"),
+charge = ReplicatedStorage:WaitForChild("Charge"),
+minigame = ReplicatedStorage:WaitForChild("Minigame"),
+fishing = ReplicatedStorage:WaitForChild("Fishing")
+}
+
+local Config = {
+CatchDelay = 1 -- delay antara catch, bisa disesuaikan
+}
+
 local isFishing = false
-local fishingActive = false
 local AutoCatch = false
 
--- Helper functions
+-- CAST ROD
 local function castRod()
 pcall(function()
-    Events.equip:FireServer(1)
-    task.wait(0.05)
-    Events.charge:InvokeServer(1755848498.4834)
-    task.wait(0.02)
-    Events.minigame:InvokeServer(1.2854545116425, 1)
-    print("[Fishing] ðŸŽ£ Cast")
+Events.equip:FireServer(1)
+task.wait(0.05)
+Events.charge:InvokeServer(1755848498.4834)
+task.wait(0.02)
+Events.minigame:InvokeServer(1.2854545116425, 1)
+print("[Fishing] 🎣 Cast")
 end)
 end
 
+-- REEL IN
 local function reelIn()
 pcall(function()
-    Events.fishing:FireServer()
-    print("[Fishing] âœ… Reel")
+Events.fishing:FireServer()
+print("[Fishing] ✔ Reel")
 end)
 end
 
-local function fishingLoop()
-    while fishingActive do
-        normalFishingLoop()
-    end
-end
-
+-- AUTO CATCH LOOP
 task.spawn(function()
 while true do
-    if AutoCatch and not isFishing then
-        pcall(function() 
-            Events.fishing:FireServer() 
-        end)
-    end
-    task.wait(Config.CatchDelay)
+if AutoCatch and not isFishing then
+    pcall(function()
+        Events.fishing:FireServer()
+    end)
+end
+task.wait(Config.CatchDelay)
 end
 end)
 
-----------------------------------------------------------------
 -- AKTIFKAN AUTO FISH
-----------------------------------------------------------------
 function AutoFish.Aktif()
-    if not isFishing then
-        isFishing = true
-
-        castRod()
-        task.wait(0.9)
-        reelIn()
-        task.wait(0.2)
-
-        isFishing = false
-    else
-        task.wait(0.1)
-    end
+if not isFishing then
+isFishing = true
+castRod()
+task.wait(0.9)
+reelIn()
+task.wait(0.2)
+isFishing = false
+end
 end
 
-
-----------------------------------------------------------------
 -- NONAKTIFKAN AUTO FISH
-----------------------------------------------------------------
 function AutoFish.Nonaktif()
-    FuncAutoFishV2.autofishV2 = false
-    FuncAutoFishV2.fishingActiveV2 = false
-    FuncAutoFishV2.delayInitializedV2 = false
-
-    if RodIdleAnim then RodIdleAnim:Stop() end
-    if RodShakeAnim then RodShakeAnim:Stop() end
-    if RodReelAnim then RodReelAnim:Stop() end
+AutoCatch = false
+isFishing = false
+print("[AutoFish] Nonaktif")
 end
 
 return AutoFish
