@@ -45,9 +45,9 @@ Teleport:CreateButton({
 
 local Fishing = Window:CreateTab("Fishing")
 
-Fishing:CreateToggle({
+Fishing:CreateButton({
     Name = "Auto Fishing",
-    Callback = function(state)
+    Callback = function()
         AutoFish.Apply()
     end,
 })
