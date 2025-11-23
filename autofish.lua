@@ -1,4 +1,18 @@
 local AutoFish = {}
+local RodIdle = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("FishingRodReelIdle")
+local RodReel = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("EasyFishReelStart")
+local RodShake = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("CastFromFullChargePosition1Hand")
+
+local character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+
+local RodShakeAnim = animator:LoadAnimation(RodShake)
+local RodIdleAnim = animator:LoadAnimation(RodIdle)
+local RodReelAnim = animator:LoadAnimation(RodReel)
+
+local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
 local FuncAutoFishV2 = {
   REReplicateTextEffectV2 = ReplicatedStorage.Packages._Index["sleitnick_net@0.2.0"].net["RE/ReplicateTextEffect"],
   autofishV2 = false,
