@@ -21,7 +21,7 @@ function TeleportModule.ToUnderground()
     root.CFrame = CFrame.new(2096.63135, -91.1976471, -703.089417)
 end
 
-function TeleportModule.ToUnderground()
+function TeleportModule.ToSisyphus()
     local player = game.Players.LocalPlayer
     local char = player.Character or player.CharacterAdded:Wait()
     local root = char:WaitForChild("HumanoidRootPart")
