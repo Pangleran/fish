@@ -1,6 +1,6 @@
 local AntiAfk = {}
 
-function AntiAfk.Apply()
+function AntiAfk.Apply(state)
   if state then
     AntiAFKConnection = LocalPlayer.Idled:Connect(function()
         VirtualUser:CaptureController()
