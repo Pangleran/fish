@@ -25,7 +25,7 @@ function TeleportModule.ToSisyphus()
     local player = game.Players.LocalPlayer
     local char = player.Character or player.CharacterAdded:Wait()
     local root = char:WaitForChild("HumanoidRootPart")
-    root.CFrame = CFrame.new(-3749.63013, -91.1976471, -703.089417)
+    root.CFrame = CFrame.new(-3749.63013, -135., -703.089417)
 end
 
 return TeleportModule
