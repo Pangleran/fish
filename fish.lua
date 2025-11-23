@@ -36,6 +36,13 @@ Teleport:CreateButton({
     end,
 })
 
+Teleport:CreateButton({
+    Name = "Teleport to Undeground (element progress)",
+    Callback = function()
+        TeleportModule.ToUnderground()
+    end,
+})
+
 local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateToggle({
