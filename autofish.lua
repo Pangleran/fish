@@ -29,6 +29,17 @@ local function fishingLoop()
     end
 end
 
+task.spawn(function()
+while true do
+    if Config.AutoCatch and not isFishing then
+        pcall(function() 
+            Events.fishing:FireServer() 
+        end)
+    end
+    task.wait(Config.CatchDelay)
+end
+end)
+
 ----------------------------------------------------------------
 -- AKTIFKAN AUTO FISH
 ----------------------------------------------------------------
