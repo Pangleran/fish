@@ -28,7 +28,7 @@ Teleport:CreateButton({
         local player = game.Players.LocalPlayer
         local char = player.Character or player.CharacterAdded:Wait()
         local root = char:WaitForChild("HumanoidRootPart")
-        root.CFrame = CFrame.new(1016.4907, 20.0919304, 5069.27295)
+        root.CFrame = CFrame.new(1081.57104, 20.0919304, 5069.27295)
     end,
 })
 
