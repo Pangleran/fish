@@ -23,6 +23,17 @@ pcall(function()
 end)
 end
 
+local function fishingLoop()
+while fishingActive do
+    if Config.BlatantMode then
+        blatantFishingLoop()
+    else
+        normalFishingLoop()
+    end
+    task.wait(0.1)
+end
+end
+
 ----------------------------------------------------------------
 -- AKTIFKAN AUTO FISH
 ----------------------------------------------------------------
