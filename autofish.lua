@@ -84,6 +84,7 @@ function AutoFish.Aktif()
     if FuncAutoFishV2.autofishV2 then return end
 
     FuncAutoFishV2.autofishV2 = true
+    FuncAutoFishV2.perfectCastV2 = true
     updateDelayBasedOnRodV2(true)
 
     task.spawn(function()
