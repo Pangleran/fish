@@ -12,9 +12,6 @@ local Window = Rayfield:CreateWindow({
     }
 })
 
-local VirtualUser = game:GetService("VirtualUser")
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateButton({

@@ -1,4 +1,6 @@
 local AntiAfk = {}
+local VirtualUser = game:GetService("VirtualUser")
+local LocalPlayer = game:GetService("Players").LocalPlayer
 
 function AntiAfk.Apply(state)
   if state then
