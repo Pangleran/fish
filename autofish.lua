@@ -25,12 +25,7 @@ end
 
 local function fishingLoop()
 while fishingActive do
-    if Config.BlatantMode then
-        blatantFishingLoop()
-    else
-        normalFishingLoop()
-    end
-    task.wait(0.1)
+    normalFishingLoop()
 end
 end
 
