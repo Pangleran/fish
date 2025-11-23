@@ -10,7 +10,7 @@ local Window = Rayfield:CreateWindow({
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
-local TeleportModule = 
+local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/xxxxx.lua"))()
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateButton({
