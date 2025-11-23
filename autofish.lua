@@ -3,6 +3,7 @@ local AutoFish = {}
 
 local isFishing = false
 local fishingActive = false
+local AutoCatch =
 
 -- Helper functions
 local function castRod()
