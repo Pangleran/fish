@@ -12,5 +12,6 @@ function AntiAfk.Apply()
         AntiAFKConnection = nil
     end
   end
+end
   
 return AntiAfk
