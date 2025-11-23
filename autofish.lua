@@ -1,4 +1,3 @@
--- autofish.lua
 local AutoFish = {}
 
 -- CORE SERVICES
