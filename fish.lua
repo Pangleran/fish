@@ -28,6 +28,7 @@ Teleport:CreateButton({
         local player = game.Players.LocalPlayer
         local char = player.Character or player.CharacterAdded:Wait()
         local root = char:WaitForChild("HumanoidRootPart")
+            
     end,
 })
 
