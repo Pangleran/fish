@@ -27,51 +27,18 @@ end
 -- AKTIFKAN AUTO FISH
 ----------------------------------------------------------------
 function AutoFish.Aktif()
-    if FuncAutoFishV2.autofishV2 then return end
+    if not isFishing then
+        isFishing = true
 
-    FuncAutoFishV2.autofishV2 = true
-    FuncAutoFishV2.perfectCastV2 = true
-    updateDelayBasedOnRodV2(true)
+        castRod()
+        task.wait(Config.FishDelay)
+        reelIn()
+        task.wait(Config.CatchDelay)
 
-    task.spawn(function()
-        while FuncAutoFishV2.autofishV2 do
-            pcall(function()
-
-                FuncAutoFishV2.fishingActiveV2 = true
-
-                -- EQUIP ROD
-                local equipRemote = NetFolder:WaitForChild("RE/EquipToolFromHotbar")
-                equipRemote:FireServer(1)
-                task.wait(0.1)
-
-                -- CHARGE ROD
-                rodRemote:InvokeServer(workspace:GetServerTimeNow())
-                task.wait(0.5)
-
-                -- CAST ANIMATION
-                if RodShakeAnim then RodShakeAnim:Play() end
-                rodRemote:InvokeServer(workspace:GetServerTimeNow())
-
-                -- CAST VALUES
-                local baseX, baseY = -0.7499996423721313, 1
-                local x, y
-
-                if FuncAutoFishV2.perfectCastV2 then
-                    x = baseX + math.random(-500, 500) / 1e7
-                    y = baseY + math.random(-500, 500) / 1e7
-                else
-                    x = math.random(-1000, 1000) / 1000
-                    y = math.random(0, 1000) / 1000
-                end
-
-                if RodIdleAnim then RodIdleAnim:Play() end
-                miniGameRemote:InvokeServer(x, y)
-
-                task.wait(customDelayV2)
-                FuncAutoFishV2.fishingActiveV2 = false
-            end)
-        end
-    end)
+        isFishing = false
+    else
+        task.wait(0.1)
+    end
 end
 
 
