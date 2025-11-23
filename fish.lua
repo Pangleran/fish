@@ -32,7 +32,7 @@ Teleport:CreateButton({
 Teleport:CreateButton({
     Name = "Teleport to Undeground (element progress)",
     Callback = function()
-        TeleportModule.ToCreater()
+        TeleportModule.ToUnderground()
     end,
 })
 
