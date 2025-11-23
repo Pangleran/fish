@@ -16,10 +16,7 @@ local Teleport = Window:CreateTab("Teleport")
 Teleport:CreateButton({
     Name = "Teleport to Ocean",
     Callback = function()
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local root = char:WaitForChild("HumanoidRootPart")
-        root.CFrame = CFrame.new(-2659.45972, 5.53963947, -4.4157052)
+            TeleportModule.ToOcean()
     end,
 })
 
