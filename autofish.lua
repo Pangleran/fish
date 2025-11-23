@@ -1,4 +1,6 @@
 local AutoFish = {}
+local customDelayV2 = 1
+local BypassDelayV2 = 0.5
 
 FuncAutoFishV2.REReplicateTextEffectV2.OnClientEvent:Connect(function(data)
   if FuncAutoFishV2.autofishV2 and FuncAutoFishV2.fishingActiveV2
