@@ -1,4 +1,7 @@
 local AutoFish = {}
+local rodRemote = net:WaitForChild("RF/ChargeFishingRod")
+local miniGameRemote = net:WaitForChild("RF/RequestFishingMinigameStarted")
+local finishRemote = net:WaitForChild("RE/FishingCompleted")
 local RodIdle = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("FishingRodReelIdle")
 local RodReel = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("EasyFishReelStart")
 local RodShake = ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Animations"):WaitForChild("CastFromFullChargePosition1Hand")
