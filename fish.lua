@@ -1,4 +1,6 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
+local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/lowtexture.lua"))()
 
 local Window = Rayfield:CreateWindow({
     Name = "Fish it - Iky Fareza",
@@ -15,20 +17,14 @@ local Teleport = Window:CreateTab("Teleport")
 Teleport:CreateButton({
     Name = "Teleport to Ocean",
     Callback = function()
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local root = char:WaitForChild("HumanoidRootPart")
-        root.CFrame = CFrame.new(-2659.45972, 5.53963947, -4.4157052)
+        TeleportModule.ToOcean()
     end,
 })
 
 Teleport:CreateButton({
     Name = "Teleport to Creater",
     Callback = function()
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local root = char:WaitForChild("HumanoidRootPart")
-        root.CFrame = CFrame.new(1081.57104, 4.11019707, 5093.01611)
+        TeleportModule.ToCreater()
     end,
 })
 
@@ -67,24 +63,6 @@ Settings:CreateToggle({
 Settings:CreateButton({
     Name = "Low Texture",
     Callback = function()
-        for _, v in pairs(game:GetDescendants()) do
-            if v:IsA("BasePart") then
-                v.Material = Enum.Material.SmoothPlastic
-                v.Reflectance = 0
-            elseif v:IsA("Decal") or v:IsA("Texture") then
-                v.Transparency = 1
-            end
-        end
-
-        local Lighting = game:GetService("Lighting")
-        for _, effect in pairs(Lighting:GetChildren()) do
-            if effect:IsA("PostEffect") then
-                effect.Enabled = false
-            end
-        end
-
-        Lighting.GlobalShadows = false
-        Lighting.FogEnd = 1e10
-        settings().Rendering.QualityLevel = "Level01"
+        LowTexture.Apply()
     end,
 })
