@@ -50,7 +50,7 @@ Fishing:CreateToggle({
     CurrentValue = false,
     Flag = "AutoFishingToggle",
     Callback = function(state)
-        AutoFish.Apply
+        AutoFish.Apply(state)
     end,
 })
 
