@@ -1,4 +1,11 @@
 local AutoFish = {}
+local FuncAutoFishV2 = {
+  REReplicateTextEffectV2 = ReplicatedStorage.Packages._Index["sleitnick_net@0.2.0"].net["RE/ReplicateTextEffect"],
+  autofishV2 = false,
+  perfectCastV2 = true,
+  fishingActiveV2 = false,
+  delayInitializedV2 = false
+}
 local customDelayV2 = 1
 local BypassDelayV2 = 0.5
 
