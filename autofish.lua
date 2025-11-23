@@ -1,22 +1,21 @@
 local AutoFish = {}
 
 FuncAutoFishV2.REReplicateTextEffectV2.OnClientEvent:Connect(function(data)
-    if FuncAutoFishV2.autofishV2 and FuncAutoFishV2.fishingActiveV2
-    and data
-    and data.TextData
-    and data.TextData.EffectType == "Exclaim" then
-
-        local myHead = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
-        if myHead and data.Container == myHead then
-            task.spawn(function()
-                for i = 1, 3 do
-                    task.wait(BypassDelayV2)
-                    finishRemote:FireServer()
-                    rconsoleclear()
-                end
-            end)
+  if FuncAutoFishV2.autofishV2 and FuncAutoFishV2.fishingActiveV2
+      and data
+      and data.TextData
+      and data.TextData.EffectType == "Exclaim" then
+    local myHead = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
+    if myHead and data.Container == myHead then
+      task.spawn(function()
+        for i = 1, 3 do
+          task.wait(BypassDelayV2)
+          finishRemote:FireServer()
+          rconsoleclear()
         end
+      end)
     end
+  end
 end)
 
 function AutoFish.Apply()
