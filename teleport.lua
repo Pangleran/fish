@@ -18,7 +18,7 @@ function TeleportModule.ToUnderground()
     local player = game.Players.LocalPlayer
     local char = player.Character or player.CharacterAdded:Wait()
     local root = char:WaitForChild("HumanoidRootPart")
-    root.CFrame = CFrame.new(1081.57104, , -703.089417)
+    root.CFrame = CFrame.new(1081.57104, -91.1976471, -703.089417)
 end
 
 return TeleportModule
