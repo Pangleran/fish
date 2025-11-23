@@ -31,7 +31,7 @@ end
 
 task.spawn(function()
 while true do
-    if Config.AutoCatch and not isFishing then
+    if AutoCatch and not isFishing then
         pcall(function() 
             Events.fishing:FireServer() 
         end)
