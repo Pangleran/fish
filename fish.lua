@@ -30,7 +30,7 @@ Teleport:CreateButton({
 })
 
 Teleport:CreateButton({
-    Name = "Teleport to Creater",
+    Name = "Teleport to Undeground",
     Callback = function()
         TeleportModule.ToCreater()
     end,
