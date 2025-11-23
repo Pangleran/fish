@@ -10,20 +10,25 @@ local Window = Rayfield:CreateWindow({
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
-local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateButton({
     Name = "Teleport to Ocean",
     Callback = function()
-        TeleportModule.ToOcean()
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local root = char:WaitForChild("HumanoidRootPart")
+        root.CFrame = CFrame.new(-2659.45972, 5.53963947, -4.4157052)
     end,
 })
 
 Teleport:CreateButton({
     Name = "Teleport to Creater",
     Callback = function()
-        TeleportModule.ToCreater()
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local root = char:WaitForChild("HumanoidRootPart")
+        root.CFrame = CFrame.new(1081.57104, 4.11019707, 5093.01611)
     end,
 })
 
