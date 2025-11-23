@@ -1,6 +1,15 @@
 -- autofish.lua (FIXED)
 local AutoFish = {}
 
+local services = {
+    game = game,
+    workspace = workspace,
+    Players = game:GetService("Players"),
+    RunService = game:GetService("RunService"),
+    ReplicatedStorage = game:GetService("ReplicatedStorage"),
+    HttpService = game:GetService("HttpService")
+}
+
 local isFishing = false
 local fishingActive = false
 local AutoCatch = false
