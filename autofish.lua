@@ -61,4 +61,13 @@ function AutoFish.Aktif()
   end)
 end
 
+function StopAutoFishV2()
+    FuncAutoFishV2.autofishV2 = false
+    FuncAutoFishV2.fishingActiveV2 = false
+    FuncAutoFishV2.delayInitializedV2 = false
+    RodIdleAnim:Stop()
+    RodShakeAnim:Stop()
+    RodReelAnim:Stop()
+end
+
 return AutoFish
