@@ -9,6 +9,34 @@ local services = {
     ReplicatedStorage = game:GetService("ReplicatedStorage"),
     HttpService = game:GetService("HttpService")
 }
+for serviceName, service in pairs(services) do
+    if not service then
+        error("Critical service missing: " .. serviceName)
+    end
+end
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+if not LocalPlayer then
+    error("LocalPlayer not available")
+end
+
+return true
+end)
+
+if not success then
+error("âŒ [Auto Fish] Critical dependency check failed: " .. tostring(errorMsg))
+return
+end
+
+-- ====================================================================
+--                        CORE SERVICES
+-- ====================================================================
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local HttpService = game:GetService("HttpService")
+local VirtualUser = game:GetService("VirtualUser")
+local LocalPlayer = Players.LocalPlayer
 
 local isFishing = false
 local fishingActive = false
