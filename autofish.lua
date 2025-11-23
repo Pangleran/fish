@@ -31,9 +31,9 @@ function AutoFish.Aktif()
         isFishing = true
 
         castRod()
-        task.wait(Config.FishDelay)
+        task.wait(0.9)
         reelIn()
-        task.wait(Config.CatchDelay)
+        task.wait(0.2)
 
         isFishing = false
     else
