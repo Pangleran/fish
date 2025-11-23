@@ -1,4 +1,11 @@
 local AutoFish = {}
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local net = ReplicatedStorage:WaitForChild("Packages")
+  :WaitForChild("_Index")
+  :WaitForChild("sleitnick_net@0.2.0")
+  :WaitForChild("net")
 local rodRemote = net:WaitForChild("RF/ChargeFishingRod")
 local miniGameRemote = net:WaitForChild("RF/RequestFishingMinigameStarted")
 local finishRemote = net:WaitForChild("RE/FishingCompleted")
