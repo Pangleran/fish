@@ -47,7 +47,7 @@ local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateButton({
     Name = "Auto Fishing",
-    Callback = function()
+    Callback = function(state)
         AutoFish.Apply()
     end,
 })
