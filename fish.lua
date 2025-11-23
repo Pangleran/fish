@@ -9,9 +9,8 @@ local Window = Rayfield:CreateWindow({
 
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = game:GetService("Players").LocalPlayer
-local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
-local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/lowtexture.lua"))()
 
+local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateButton({
@@ -63,6 +62,24 @@ Settings:CreateToggle({
 Settings:CreateButton({
     Name = "Low Texture",
     Callback = function()
-        LowTexture.Apply()
+        for _, v in pairs(game:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.Material = Enum.Material.SmoothPlastic
+                v.Reflectance = 0
+            elseif v:IsA("Decal") or v:IsA("Texture") then
+                v.Transparency = 1
+            end
+        end
+
+        local Lighting = game:GetService("Lighting")
+        for _, effect in pairs(Lighting:GetChildren()) do
+            if effect:IsA("PostEffect") then
+                effect.Enabled = false
+            end
+        end
+
+        Lighting.GlobalShadows = false
+        Lighting.FogEnd = 1e10
+        settings().Rendering.QualityLevel = "Level01"
     end,
 })
