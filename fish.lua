@@ -39,7 +39,7 @@ Teleport:CreateButton({
 Teleport:CreateButton({
     Name = "Teleport to Sisyphus (ghostfin progress)",
     Callback = function()
-        TeleportModule.ToUnderground()
+        TeleportModule.ToSisyphus()
     end,
 })
 
