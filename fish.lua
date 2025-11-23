@@ -37,7 +37,7 @@ Teleport:CreateButton({
 })
 
 Teleport:CreateButton({
-    Name = "Teleport to Undeground (element progress)",
+    Name = "Teleport to Sisyphus (ghostfin progress)",
     Callback = function()
         TeleportModule.ToUnderground()
     end,
