@@ -18,7 +18,7 @@ FuncAutoFishV2.REReplicateTextEffectV2.OnClientEvent:Connect(function(data)
   end
 end)
 
-function AutoFish.Apply()
+function AutoFish.Aktif()
   if FuncAutoFishV2.autofishV2 then return end
 
   FuncAutoFishV2.autofishV2 = true
