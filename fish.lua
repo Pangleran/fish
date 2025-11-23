@@ -48,8 +48,9 @@ local Fishing = Window:CreateTab("Fishing")
 Fishing:CreateToggle({
     Name = "Auto Fishing",
     CurrentValue = false,
-    Flag = "AutoFishToggle"
+    Flag = "AutoFishToggle",
     Callback = function(state)
+        
         AutoFish.Apply()
     end,
 })
