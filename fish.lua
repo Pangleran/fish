@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local TeleportModule = loadstring(game:HttpGet(
-"https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
+    "https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet(
-"https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
+    "https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
 local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
 
 local Window = Rayfield:CreateWindow({
