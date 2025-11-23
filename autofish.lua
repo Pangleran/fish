@@ -24,9 +24,9 @@ end)
 end
 
 local function fishingLoop()
-while fishingActive do
-    normalFishingLoop()
-end
+    while fishingActive do
+        normalFishingLoop()
+    end
 end
 
 ----------------------------------------------------------------
