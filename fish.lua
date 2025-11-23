@@ -1,6 +1,4 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
-local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
-local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/lowtexture.lua"))()
 
 local Window = Rayfield:CreateWindow({
     Name = "Fish it - Iky Fareza",
@@ -8,6 +6,9 @@ local Window = Rayfield:CreateWindow({
         Enabled = false
     }
 })
+
+local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/teleport.lua"))()
+local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/repo/main/lowtexture.lua"))()
 
 local VirtualUser = game:GetService("VirtualUser")
 local LocalPlayer = game:GetService("Players").LocalPlayer
