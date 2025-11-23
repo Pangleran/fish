@@ -29,6 +29,13 @@ Teleport:CreateButton({
     end,
 })
 
+Teleport:CreateButton({
+    Name = "Teleport to Creater",
+    Callback = function()
+        TeleportModule.ToCreater()
+    end,
+})
+
 local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateToggle({
