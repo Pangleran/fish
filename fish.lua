@@ -23,10 +23,7 @@ Teleport:CreateButton({
 Teleport:CreateButton({
     Name = "Teleport to Creater",
     Callback = function()
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local root = char:WaitForChild("HumanoidRootPart")
-        root.CFrame = CFrame.new(1081.57104, 4.11019707, 5093.01611)
+        TeleportModule.ToOcean()
     end,
 })
 
