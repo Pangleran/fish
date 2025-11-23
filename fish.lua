@@ -47,7 +47,7 @@ Settings:CreateToggle({
     CurrentValue = false,
     Flag = "AntiAFKToggle",
     Callback = function(state)
-        
+        AntiAfk.
     end,
 })
 
