@@ -56,7 +56,7 @@ Fishing:CreateToggle({
 
 local Settings = Window:CreateTab("Settings")
 
-Settings:CreateButton({
+Settings:CreateToggle({
     Name = "Anti AFK",
     CurrentValue = false,
     Flag = "AntiAFKToggle",
