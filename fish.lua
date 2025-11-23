@@ -53,7 +53,7 @@ Fishing:CreateToggle({
         if state then
             AutoFish.Aktif()
         else
-            
+            AutoFish.Nonaktif()
         AutoFish.Apply()
     end,
 })
