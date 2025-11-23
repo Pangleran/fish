@@ -16,7 +16,7 @@ local Teleport = Window:CreateTab("Teleport")
 Teleport:CreateButton({
     Name = "Teleport to Ocean",
     Callback = function()
-            TeleportModule.ToOcean()
+        TeleportModule.ToOcean()
     end,
 })
 
