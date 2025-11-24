@@ -7,7 +7,7 @@ function TeleportModule.ToOcean()
     root.CFrame = CFrame.new(-2659.45972, 5.53963947, -4.4157052)
 end
 
-function TeleportModule.ToCreater()
+function TeleportModule.ToClassicIsland()
     local player = game.Players.LocalPlayer
     local char = player.Character or player.CharacterAdded:Wait()
     local root = char:WaitForChild("HumanoidRootPart")
