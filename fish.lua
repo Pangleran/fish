@@ -30,7 +30,7 @@ Teleport:CreateButton({
 })
 
 Teleport:CreateButton({
-    Name = "Teleport to Classic Island [NEW]",
+    Name = "Teleport to Iron Cavern [NEW]",
     Callback = function()
         TeleportModule.ToClassicIsland()
     end,
