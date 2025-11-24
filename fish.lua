@@ -18,7 +18,7 @@ task.spawn(function()
     if core then
         local toggle = core:WaitForChild("Toggle", 10)
         if toggle and toggle:FindFirstChild("TextLabel") then
-            toggle.TextLabel.Text = "Fish - Iky Fareza"
+            toggle.TextLabel.Text = "Fish Script - Iky Fareza"
         end
     end
 end)
