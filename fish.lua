@@ -30,6 +30,13 @@ Teleport:CreateButton({
 })
 
 Teleport:CreateButton({
+    Name = "Teleport to Classic Island [NEW]",
+    Callback = function()
+        TeleportModule.ToClassicIsland()
+    end,
+})
+
+Teleport:CreateButton({
     Name = "Teleport to Undeground (element progress)",
     Callback = function()
         TeleportModule.ToUnderground()
