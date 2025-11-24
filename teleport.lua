@@ -16,7 +16,8 @@ end
 
 function TeleportModule.ToIronCavern()
     local player = game.Players.LocalPlayer
-    local char = player.Character or player.Character
+    local char = player.Character or player.CharacterAdded:Wait()
+    local root = char:wa
 
 function TeleportModule.ToUnderground()
     local player = game.Players.LocalPlayer
