@@ -94,5 +94,7 @@ Settings:CreateButton({
 })
 
 Settings:CreateButton({
-    Name = "Exit"
+    Name = "Exit",
+    Callback = function()
+        
 })
