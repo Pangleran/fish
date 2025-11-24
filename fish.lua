@@ -13,16 +13,6 @@ local Window = Rayfield:CreateWindow({
     }
 })
 
-task.spawn(function()
-    local core = game:GetService("CoreGui"):WaitForChild("Rayfield", 10)
-    if core then
-        local toggle = core:WaitForChild("Toggle", 10)
-        if toggle and toggle:FindFirstChild("TextLabel") then
-            toggle.TextLabel.Text = "Script Fishit - Iky Fareza"
-        end
-    end
-end)
-
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateButton({
