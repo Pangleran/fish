@@ -19,6 +19,7 @@ function TeleportModule.ToIronCavern()
     local char = player.Character or player.CharacterAdded:Wait()
     local root = char:WaitForChild("HumanoidRootPart")
     root.CFrame = CFrame.new(-8767.13379, -588.000122, 45.2874146)
+end
 
 function TeleportModule.ToUnderground()
     local player = game.Players.LocalPlayer
