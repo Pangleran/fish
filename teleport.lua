@@ -14,6 +14,8 @@ function TeleportModule.ToClassicIsland()
     root.CFrame = CFrame.new(1254.07678, 9.99999905, 2823.01782)
 end
 
+function TeleportModule.To
+
 function TeleportModule.ToUnderground()
     local player = game.Players.LocalPlayer
     local char = player.Character or player.CharacterAdded:Wait()
