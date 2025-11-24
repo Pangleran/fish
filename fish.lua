@@ -23,9 +23,9 @@ Teleport:CreateButton({
 })
 
 Teleport:CreateButton({
-    Name = "Teleport to Classic [NE",
+    Name = "Teleport to Classic Island [NEW]",
     Callback = function()
-        TeleportModule.ToCreater()
+        TeleportModule.ToClassicIsland()
     end,
 })
 
