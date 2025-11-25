@@ -28,7 +28,7 @@ function AutoFish.Aktif()
                     Events.fishing:FireServer() 
                 end)
             task.wait(0.01)
-                end
+            end
             task.wait(0.2)
         end)
         wait(1)
