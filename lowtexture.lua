@@ -1,76 +1,66 @@
 local LowTexture = {}
 
-function LowTexture.Apply()
-    -- ============================
-    -- REMOVE ALL TEXTURES & DETAILS
-    -- ============================
-    for _, v in ipairs(game:GetDescendants()) do
-        if v:IsA("BasePart") then
-            v.Material = Enum.Material.SmoothPlastic
-            v.Reflectance = 0
-            v.CastShadow = false
+local gpuActive = false
+local whiteScreen = nil
 
-        elseif v:IsA("Decal") or v:IsA("Texture") then
-            v.Transparency = 1
 
-        elseif v:IsA("ParticleEmitter")
-            or v:IsA("Trail")
-            or v:IsA("Beam")
-            or v:IsA("Highlight")
-            or v:IsA("Smoke")
-            or v:IsA("Sparkles")
-            or v:IsA("Fire") then
-            v.Enabled = false
-        end
-    end
+-- ======================
+-- FUNGSI AKTIF
+-- ======================
+function LowTexture.Aktif()
+    if gpuActive then return end
+    gpuActive = true
 
-    -- ============================
-    -- KILL ALL HEAVY LIGHTING EFFECTS
-    -- ============================
-    local Lighting = game:GetService("Lighting")
-
-    for _, obj in ipairs(Lighting:GetChildren()) do
-        if obj:IsA("PostEffect")
-        or obj:IsA("BloomEffect")
-        or obj:IsA("ColorCorrectionEffect")
-        or obj:IsA("SunRaysEffect")
-        or obj:IsA("DepthOfFieldEffect")
-        or obj:IsA("Atmosphere")
-        or obj:IsA("Sky") then
-            obj:Destroy()
-        end
-    end
-
-    Lighting.GlobalShadows = false
-    Lighting.Brightness = 1
-    Lighting.EnvironmentDiffuseScale = 0
-    Lighting.EnvironmentSpecularScale = 0
-    Lighting.FogEnd = 1e10
-    Lighting.ClockTime = 12
-
-    -- ============================
-    -- RENDERING LOWEST
-    -- ============================
-    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
-
-    -- ============================
-    -- PHYSICS & NETWORK OPTIMIZATION
-    -- ============================
     pcall(function()
-        -- Membatasi physics client supaya ringan
-        game:GetService("PhysicsSettings").PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Always
-
-        -- Mengurangi update replicator network
-        sethiddenproperty(game:GetService("NetworkClient"), "ClientMinOutgoingBandwidth", 0)
-        sethiddenproperty(game:GetService("NetworkClient"), "ClientMaxOutgoingBandwidth", 0)
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+        game.Lighting.GlobalShadows = false
+        game.Lighting.FogEnd = 1
+        setfpscap(8)
     end)
 
-    -- ============================
-    -- OPTIONAL FPS LIMITER
-    -- ============================
-    pcall(function()
-        if setfpscap then setfpscap(45) end -- FPS stabil paling tinggi
-    end)
+    whiteScreen = Instance.new("ScreenGui")
+    whiteScreen.ResetOnSpawn = false
+    whiteScreen.DisplayOrder = 999999
+
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 1, 0)
+    frame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+    frame.Parent = whiteScreen
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(0, 400, 0, 100)
+    label.Position = UDim2.new(0.5, -200, 0.5, -50)
+    label.BackgroundTransparency = 1
+    label.Text = "🔋 GPU SAVER ACTIVE\n\nAuto Fish Running..."
+    label.TextColor3 = Color3.new(0, 1, 0)
+    label.TextSize = 28
+    label.Font = Enum.Font.GothamBold
+    label.TextXAlignment = Enum.TextXAlignment.Center
+    label.Parent = frame
+
+    whiteScreen.Parent = game.CoreGui
 end
+
+
+-- ======================
+-- FUNGSI NONAKTIF
+-- ======================
+function LowTexture.Nonaktif()
+    if not gpuActive then return end
+    gpuActive = false
+
+    pcall(function()
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
+        game.Lighting.GlobalShadows = true
+        game.Lighting.FogEnd = 100000
+        setfpscap(0)
+    end)
+
+    if whiteScreen then
+        whiteScreen:Destroy()
+        whiteScreen = nil
+    end
+end
+
 
 return LowTexture
