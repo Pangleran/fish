@@ -5,7 +5,7 @@ local LowTexture = loadstring(game:HttpGet(
     "https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
 local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
 local AutoFish = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/autofish.lua"))()
-local SwitchServer = loadstring(game:HttpGet(""))
+local SwitchServer = loadstring(game:HttpGet("https://"))
 
 local Window = Rayfield:CreateWindow({
     Name = "Fish it - Iky Fareza",
