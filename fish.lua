@@ -40,7 +40,7 @@ Fishing:CreateInput({
     Callback = function(text)
         local value = tonumber(text)
         if value then
-            AutoFish.DelayCast(value)
+            AutoFish.SetDelayCast(value)
         end
     end,
 })
@@ -52,7 +52,7 @@ Fishing:CreateInput({
     Callback = function(text)
         local value = tonumber(text)
         if value then
-            AutoFish.DelayReel(value)
+            AutoFish.SetDelayReel(value)
         end
     end,
 })
@@ -64,7 +64,7 @@ Fishing:CreateInput({
     Callback = function(text)
         local value = tonumber(text)
         if value then
-            AutoFish.DelayComplete(value)
+            AutoFish.SetDelayComplete(value)
         end
     end,
 })
