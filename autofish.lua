@@ -42,13 +42,13 @@ function AutoFish.Aktif()
         end)
 
         task.wait()
-        
-            for i = 1, 5 do
-                Events.fishing:FireServer()
-                task.wait(0.005)
-            end
 
-            task.wait(0.05)
+        for i = 1, 5 do
+            Events.fishing:FireServer()
+            task.wait(0.005)
+        end
+
+        task.wait(0.05)
     end
 end
 
