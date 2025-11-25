@@ -43,14 +43,14 @@ function AutoFish.Aktif()
             Events.minigame:InvokeServer(1.2854545116425, 1)
         end)
 
-        task.wait(AutoFish.DelayCast)
+        task.wait(AutoFish.DelayCastValue)
 
-        for i = 1, AutoFish.DelayReel do
+        for i = 1, AutoFish.DelayReelValue do
             Events.fishing:FireServer()
             task.wait(0.01)
         end
 
-        task.wait(AutoFish.DelayComplete)
+        task.wait(AutoFish.DelayCompleteValue)
     end
 end
 
