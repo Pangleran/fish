@@ -13,9 +13,9 @@ local Events = {
 }
 
 AutoFish.Running = false
-AutoFish.DelayCastValue = 0.1
-AutoFish.DelayReelValue = 15
-AutoFish.DelayCompleteValue = 0.05
+AutoFish.DelayCastValue = 1
+AutoFish.DelayReelValue = 5
+AutoFish.DelayCompleteValue = 0.2
 
 function AutoFish.SetDelayCast(v)
     AutoFish.DelayCastValue = v
@@ -35,18 +35,19 @@ function AutoFish.Aktif()
     while AutoFish.Running do
         pcall(function()
             Events.equip:FireServer(1)
+            task.wait(0.05)
+
+            Events.charge:InvokeServer(1755848498.4834)
             task.wait(0.02)
 
-            Events.charge:InvokeServer(9999999999)
-            task.wait(0.01)
-            Events.minigame:InvokeServer(9999, 1)
+            Events.minigame:InvokeServer(1.2854545116425, 1)
         end)
 
         task.wait(AutoFish.DelayCastValue)
 
         for i = 1, AutoFish.DelayReelValue do
             Events.fishing:FireServer()
-            task.wait(0.005)
+            task.wait(0.01)
         end
 
         task.wait(AutoFish.DelayCompleteValue)
