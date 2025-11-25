@@ -50,7 +50,7 @@ Teleport:CreateButton({
     end,
 })
 
-local Fishing = Window:CreateTab("Fishing")
+local 
 
 Fishing:CreateToggle({
     Name = "Auto Fishing",
@@ -83,8 +83,18 @@ Settings:CreateButton({
     end,
 })
 
+local Teleport = Window:CreateTab("Settings")
+
+Teleport:CreateButton({
+    Name = "Rejoin Server",
+    Callback = function()
+        local TeleportService = game:GetService("TeleportService")
+        TeleportService:Teleport(game.PlaceId, game.Players.LocalPlayer)
+    end
+})
+
 Settings:CreateButton({
-    Name = "",
+    Name = "Switch Server",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         local HttpService = game:GetService("HttpService")
