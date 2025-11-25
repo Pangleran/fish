@@ -83,8 +83,8 @@ Settings:CreateButton({
     end,
 })
 
-Teleport:CreateButton({
-    Name = "Server Hop",
+Settings:CreateButton({
+    Name = "Rejoin",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         local HttpService = game:GetService("HttpService")
