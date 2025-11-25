@@ -39,15 +39,6 @@ function AutoFish.Aktif()
                 task.wait(0.01)
                 Events.minigame:InvokeServer(1.2854545116425, 1)
             end)
-
-            task.wait(0.05)
-
-            -- Cast 3
-            task.spawn(function()
-                Events.charge:InvokeServer(1755848498.4834)
-                task.wait(0.01)
-                Events.minigame:InvokeServer(1.2854545116425, 1)
-            end)
         end)
 
         task.wait(0.9)
