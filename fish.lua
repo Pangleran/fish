@@ -85,6 +85,7 @@ Settings:CreateToggle({
             LowTexture.Aktif()
         else
             LowTexture.Nonaktif()
+        end
     end,
 })
 
