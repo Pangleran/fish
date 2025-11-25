@@ -46,7 +46,6 @@ function AutoFish.Aktif()
             end
 
             task.wait(0.05)
-
     end
 end
 
