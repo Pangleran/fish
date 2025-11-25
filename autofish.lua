@@ -17,15 +17,15 @@ AutoFish.DelayCast = 1
 AutoFish.DelayReel = 5
 AutoFish.DelayComplete = 0.2
 
-function AutoFish.DelayCast(v)
+function AutoFish.SetDelayCast(v)
     AutoFish.DelayCast = v
 end
 
-function AutoFish.DelayReel(v)
+function AutoFish.SetDelayReel(v)
     AutoFish.DelayReel = v
 end
 
-function AutoFish.DelayComplete(v)
+function AutoFish.SetDelayComplete(v)
     AutoFish.DelayComplete = v
 end
 
