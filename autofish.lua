@@ -32,3 +32,4 @@ function AutoFish.Nonaktif()
 end
 
 return AutoFish
+-- ok
