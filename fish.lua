@@ -84,7 +84,7 @@ Settings:CreateButton({
 })
 
 Settings:CreateButton({
-    Name = "Rejoin",
+    Name = "",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         local HttpService = game:GetService("HttpService")
