@@ -88,7 +88,7 @@ Settings:CreateButton({
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         TeleportService:Teleport(game.PlaceId, game.Players.LocalPlayer)
-    end
+    end,
 })
 
 Settings:CreateButton({
@@ -112,7 +112,7 @@ Settings:CreateButton({
                 end
             end
         end
-    end
+    end,
 })
 
 Settings:CreateButton({
