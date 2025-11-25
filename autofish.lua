@@ -15,7 +15,9 @@ local Events = {
 
 function loopReel()
     while true do
-        pcall(function()Events.fishing:FireServer()
+        pcall(function()
+                Events.fishing:FireServer()
+                
         
 
 function AutoFish.Aktif()
