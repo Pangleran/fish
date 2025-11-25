@@ -40,6 +40,9 @@ function AutoFish.Aktif()
                 Events.minigame:InvokeServer(1.2854545116425, 1)
             end)
         end)
+
+        task.wait()
+        
             for i = 1, 5 do
                 Events.fishing:FireServer()
                 task.wait(0.005)
