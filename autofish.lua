@@ -5,7 +5,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local LocalPlayer = Players.LocalPlayer
 
--- event asli (pakai WaitForChild)
+function AutoFish.Aktif()
 
-AutoFish.Config = Config
 return AutoFish
