@@ -5,7 +5,6 @@ local HttpService = game:GetService("HttpService")
 local PlaceId = game.PlaceId
 
 function SwitchServer.Apply()
-    local targetServer = nil
     local servers = {}
 
     local success, response = pcall(function()
@@ -16,28 +15,16 @@ function SwitchServer.Apply()
 
     if success and response and response.data then
         for _, srv in ipairs(response.data) do
-
             if srv.playing < srv.maxPlayers then
-
-                -- FILTER SERVER SINGAPURA (Asia-Pacific = "ap-")
-                if string.find(string.lower(srv.id), "ap-") then
-                    table.insert(servers, srv)
-                end
+                table.insert(servers, srv)
             end
         end
-
-        -- urutkan berdasarkan jumlah pemain
-        table.sort(servers, function(a, b)
-            return a.playing < b.playing
-        end)
-
-        targetServer = servers[1]
     end
 
-    if targetServer then
-        TeleportService:TeleportToPlaceInstance(PlaceId, targetServer.id)
+    if #servers > 0 then
+        local randomServer = servers[math.random(1, #servers)]
+        TeleportService:TeleportToPlaceInstance(PlaceId, randomServer.id)
     else
-        -- fallback kalau tidak ada server SG
         TeleportService:Teleport(PlaceId)
     end
 end

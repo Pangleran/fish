@@ -2,19 +2,25 @@
 
 while true
 do
-  # 1. Pull dulu untuk sync
-  git pull --rebase
+  # Pull dengan output disembunyikan
+  git pull --rebase > /dev/null 2>&1
 
-  # 2. Jika ada perubahan file, commit + push
-  if ! git diff-index --quiet HEAD --; then
-    git add .
-    git commit -m "auto commit $(date)"
-    git push
-    echo "Auto committed & pushed at $(date)"
+  # Ambil daftar file yang berubah
+  CHANGED=$(git diff --name-only)
+
+  if [ ! -z "$CHANGED" ]; then
+    git add . > /dev/null 2>&1
+    git commit -m "auto commit $(date)" > /dev/null 2>&1
+    git push > /dev/null 2>&1
+
+    # Print bersih
+    for FILE in $CHANGED; do
+      echo "file $FILE berhasil di push"
+    done
   else
-    # jika tidak ada perubahan, coba push sisa rebase
-    git push
+    # Tidak ada commit baru, tetap push sisa rebase tapi diam
+    git push > /dev/null 2>&1
   fi
-  
+
   sleep 10
 done
