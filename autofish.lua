@@ -29,6 +29,6 @@ end
 function AutoFish.Nonaktif()
     Events.cancel:FireServer()
     Events.unequip:FireServer(1)
-  
+end
 
 return AutoFish
