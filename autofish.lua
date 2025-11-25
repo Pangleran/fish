@@ -17,7 +17,7 @@ function loopReel()
     while true do
         pcall(function()
                 Events.fishing:FireServer()
-                
+        end)
         
 
 function AutoFish.Aktif()
