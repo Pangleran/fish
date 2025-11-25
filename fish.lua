@@ -83,7 +83,7 @@ Settings:CreateButton({
     end,
 })
 
-Teleport:CreateButton({
+Settings:CreateButton({
     Name = "Rejoin Server",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
