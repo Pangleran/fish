@@ -16,39 +16,28 @@ local Window = Rayfield:CreateWindow({
 
 local Teleport = Window:CreateTab("Teleport")
 
-Teleport:CreateButton({
-    Name = "Teleport to Ocean",
-    Callback = function()
-        TeleportModule.ToOcean()
-    end,
-})
-
-Teleport:CreateButton({
-    Name = "Teleport to Classic Island [NEW]",
-    Callback = function()
-        TeleportModule.ToClassicIsland()
-    end,
-})
-
-Teleport:CreateButton({
-    Name = "Teleport to Iron Cavern [NEW]",
-    Callback = function()
-        TeleportModule.ToIronCavern()
-    end,
-})
-
-Teleport:CreateButton({
-    Name = "Teleport to Undeground (element progress)",
-    Callback = function()
-        TeleportModule.ToUnderground()
-    end,
-})
-
-Teleport:CreateButton({
-    Name = "Teleport to Sisyphus (ghostfin progress)",
-    Callback = function()
-        TeleportModule.ToSisyphus()
-    end,
+Teleport:CreateDropdown({
+    Name = "Teleport Locations",
+    Options = {
+        "Ocean",
+        "Classic Island [NEW]",
+        "Iron Cavern [NEW]",
+        "Underground (element progress)",
+        "Sisyphus (ghostfin progress)"
+    },
+    Callback = function(selectedOption)
+        if selectedOption == "Ocean" then
+            TeleportModule.ToOcean()
+        elseif selectedOption == "Classic Island [NEW]" then
+            TeleportModule.ToClassicIsland()
+        elseif selectedOption == "Iron Cavern [NEW]" then
+            TeleportModule.ToIronCavern()
+        elseif selectedOption == "Underground (element progress)" then
+            TeleportModule.ToUnderground()
+        elseif selectedOption == "Sisyphus (ghostfin progress)" then
+            TeleportModule.ToSisyphus()
+        end
+    end
 })
 
 local Fishing = Window:CreateTab("Fishing")
