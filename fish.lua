@@ -37,7 +37,7 @@ Teleport:CreateDropdown({
         elseif selectedOption == "Sisyphus (ghostfin progress)" then
             TeleportModule.ToSisyphus()
         end
-    end
+    end,
 })
 
 local Fishing = Window:CreateTab("Fishing")
