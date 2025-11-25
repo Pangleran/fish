@@ -34,13 +34,37 @@ end
 local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateInput({
-    Name = "Fishing Delay",
-    PlaceholderText = "example: 0.9",
+    Name = "Delay Cast (default 1)",
+    PlaceholderText = "example: 1",
     RemoveTextAfterFocusLost = false,
     Callback = function(text)
         local value = tonumber(text)
         if value then
-            AutoFish.SetDelay(value)
+            AutoFish.DelayCast(value)
+        end
+    end,
+})
+
+Fishing:CreateInput({
+    Name = "Delay Reel (default 5)",
+    PlaceholderText = "example: 5",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        local value = tonumber(text)
+        if value then
+            AutoFish.DelayReel(value)
+        end
+    end,
+})
+
+Fishing:CreateInput({
+    Name = "Delay Complete (default 0.2)",
+    PlaceholderText = "example: 0.2",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        local value = tonumber(text)
+        if value then
+            AutoFish.DelayComplete(value)
         end
     end,
 })
