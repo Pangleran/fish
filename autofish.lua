@@ -21,25 +21,34 @@ function AutoFish.Aktif()
 
     while AutoFish.Running do
         pcall(function()
-            -- Equip
             Events.equip:FireServer(1)
-            task.wait(0.02)
-
-            -- Cast
-            Events.charge:InvokeServer(1755848498.4834)
             task.wait(0.01)
-            Events.minigame:InvokeServer(1.2854545116425, 1)
-            task.wait(0.15)
 
-            -- BRUTAL REEL SPAM (tanpa berhenti)
-            local start = tick()
-            while AutoFish.Running and tick() - start < 1.2 do
-                Events.fishing:FireServer()
-                task.wait(0.002) -- super cepat
-            end
+            -- Cast 1
+            task.spawn(function()
+                Events.charge:InvokeServer(1755848498.4834)
+                task.wait(0.01)
+                Events.minigame:InvokeServer(1.2854545116425, 1)
+            end)
+
+            task.wait(0.05)
+
+            -- Cast 2 (overlapping)
+            task.spawn(function()
+                Events.charge:InvokeServer(1755848498.4834)
+                task.wait(0.01)
+                Events.minigame:InvokeServer(1.2854545116425, 1)
+            end)
         end)
 
-        task.wait(0.05)
+        task.wait(0.9)
+
+        for i = 1, 5 do
+            Events.fishing:FireServer()
+            task.wait(0.01)
+        end
+
+        task.wait(0.2 * 0.5)
     end
 end
 
