@@ -3,10 +3,6 @@ local LowTexture = {}
 local gpuActive = false
 local whiteScreen = nil
 
-
--- ======================
--- FUNGSI AKTIF
--- ======================
 function LowTexture.Aktif()
     if gpuActive then return end
     gpuActive = true
