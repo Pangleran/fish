@@ -14,7 +14,8 @@ local Events = {
 }
 
 function AutoFish.Aktif()
-    pcall(function()
+    while true do
+        pcall(function()
         -- code
     end)
 end
