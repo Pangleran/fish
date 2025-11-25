@@ -24,7 +24,7 @@ function LowTexture.Nonaktif()
     gpuActive = false
 
     pcall(function()
-        settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Level02
         game.Lighting.GlobalShadows = true
         game.Lighting.FogEnd = 100000
         setfpscap(0)
