@@ -35,7 +35,8 @@ function AutoFish.Aktif()
 end
 
 function AutoFish.Nonaktif()
-    Events.cance
+    pcall()
+    Events.cancel:FireServer()
     Events.unequip:FireServer(1)
 end
 
