@@ -13,20 +13,20 @@ local Events = {
 }
 
 AutoFish.Running = false
-AutoFish.DelayCast = 1
-AutoFish.DelayReel = 5
-AutoFish.DelayComplete = 0.2
+AutoFish.DelayCastValue = 1
+AutoFish.DelayReelValue = 5
+AutoFish.DelayCompleteValue = 0.2
 
 function AutoFish.SetDelayCast(v)
-    AutoFish.DelayCast = v
+    AutoFish.DelayCastValue = v
 end
 
 function AutoFish.SetDelayReel(v)
-    AutoFish.DelayReel = v
+    AutoFish.DelayReelValue = v
 end
 
 function AutoFish.SetDelayComplete(v)
-    AutoFish.DelayComplete = v
+    AutoFish.DelayCompleteValue = v
 end
 
 function AutoFish.Aktif()
