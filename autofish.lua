@@ -18,6 +18,8 @@ function loopReel()
         pcall(function()
                 Events.fishing:FireServer()
         end)
+    end
+end
         
 
 function AutoFish.Aktif()
