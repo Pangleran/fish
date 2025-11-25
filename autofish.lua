@@ -41,14 +41,14 @@ function AutoFish.Aktif()
             end)
         end)
 
-        task.wait(0.5)
+        task.wait(0.9)
 
         for i = 1, 5 do
             Events.fishing:FireServer()
             task.wait(0.01)
         end
 
-        task.wait(0.2 * 0.5)
+        task.wait(0.2)
     end
 end
 
