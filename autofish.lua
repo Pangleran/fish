@@ -7,9 +7,8 @@ function AutoFish.Aktif()
 end
 
 -- code reel / tarikan
-pcall(function()
-        Events.fishing:FireServer()
-        print("[Fishing] âœ… Reel")
+-- pcall(function()
+--      Events.fishing:FireServer()
     end)
 
 return AutoFish
