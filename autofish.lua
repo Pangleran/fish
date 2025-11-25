@@ -16,6 +16,7 @@ local Events = {
 function loopReel()
     while true do
         pcall(function()
+            task.wait(0.02)
             Events.fishing:FireServer()
         end)
     end
