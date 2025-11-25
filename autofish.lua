@@ -33,7 +33,7 @@ function AutoFish.Aktif()
 
             task.wait(0.05)
 
-            -- Cast 2 (overlapping)
+            -- Cast 2
             task.spawn(function()
                 Events.charge:InvokeServer(1755848498.4834)
                 task.wait(0.01)
