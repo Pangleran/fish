@@ -27,7 +27,7 @@ function AutoFish.Aktif()
                 pcall(function() 
                     Events.fishing:FireServer() 
                 end)
-            task.wait(0.01)
+                task.wait(0.01)
             end
             task.wait(0.2)
         end)
