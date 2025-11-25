@@ -50,7 +50,7 @@ Teleport:CreateButton({
     end,
 })
 
-local 
+local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateToggle({
     Name = "Auto Fishing",
@@ -83,7 +83,7 @@ Settings:CreateButton({
     end,
 })
 
-local Teleport = Window:CreateTab("Settings")
+local Teleport = Window:CreateTab("Settings"
 
 Teleport:CreateButton({
     Name = "Rejoin Server",
