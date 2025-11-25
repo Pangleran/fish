@@ -6,5 +6,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = Players.LocalPlayer
 
 function AutoFish.Aktif()
+    
 
 return AutoFish
