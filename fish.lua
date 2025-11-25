@@ -83,8 +83,6 @@ Settings:CreateButton({
     end,
 })
 
-local Teleport = Window:CreateTab("Settings"
-
 Teleport:CreateButton({
     Name = "Rejoin Server",
     Callback = function()
