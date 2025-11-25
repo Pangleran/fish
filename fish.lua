@@ -35,7 +35,7 @@ local Fishing = Window:CreateTab("Fishing")
 
 Fishing:CreateInput({
     Name = "Delay Cast (default 1)",
-    PlaceholderText = "",
+    PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
     Callback = function(text)
         local value = tonumber(text)
@@ -47,7 +47,7 @@ Fishing:CreateInput({
 
 Fishing:CreateInput({
     Name = "Delay Reel (default 5)",
-    PlaceholderText = "",
+    PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
     Callback = function(text)
         local value = tonumber(text)
@@ -59,7 +59,7 @@ Fishing:CreateInput({
 
 Fishing:CreateInput({
     Name = "Delay Complete (default 0.2)",
-    PlaceholderText = "",
+    PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
     Callback = function(text)
         local value = tonumber(text)
