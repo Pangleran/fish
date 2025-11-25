@@ -83,6 +83,30 @@ Settings:CreateButton({
     end,
 })
 
+Teleport:CreateButton({
+    Name = "Server Hop",
+    Callback = function()
+        local TeleportService = game:GetService("TeleportService")
+        local HttpService = game:GetService("HttpService")
+        local PlaceId = game.PlaceId
+
+        local success, result = pcall(function()
+            return HttpService:JSONDecode(
+                game:HttpGet("https://games.roblox.com/v1/games/"..PlaceId.."/servers/Public?sortOrder=Asc&limit=100")
+            )
+        end)
+
+        if success and result and result.data then
+            for _, v in pairs(result.data) do
+                if v.playing < v.maxPlayers then
+                    TeleportService:TeleportToPlaceInstance(PlaceId, v.id)
+                    break
+                end
+            end
+        end
+    end
+})
+
 Settings:CreateButton({
     Name = "Exit",
     Callback = function()
