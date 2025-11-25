@@ -40,23 +40,13 @@ function AutoFish.Aktif()
                 Events.minigame:InvokeServer(1.2854545116425, 1)
             end)
         end)
-        pcall(function()
-            Events.equip:FireServer(1)
-            task.wait(0.02)
-
-            Events.charge:InvokeServer(1755848498.4834)
-            task.wait(0.01)
-
-            Events.minigame:InvokeServer(1.2854545116425, 1)
-            task.wait(0.25)
-
             for i = 1, 5 do
                 Events.fishing:FireServer()
                 task.wait(0.005)
             end
 
             task.wait(0.05)
-        end)
+
     end
 end
 
