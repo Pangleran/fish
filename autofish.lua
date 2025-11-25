@@ -6,9 +6,9 @@ function AutoFish.Aktif()
     end)
 end
 
--- code reel / tarikan
+-- REELIN / TARIK IKAN
 -- pcall(function()
---      Events.fishing:FireServer()
-    end)
+--     Events.fishing:FireServer()
+-- end)
 
 return AutoFish
