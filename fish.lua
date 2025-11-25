@@ -83,7 +83,8 @@ Settings:CreateToggle({
     Callback = function(state)
         if state then
             LowTexture.Aktif()
-            else
+        else
+            LowTexture.Nonaktif()
     end,
 })
 
