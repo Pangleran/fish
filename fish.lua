@@ -95,7 +95,7 @@ Settings:CreateButton({
 Settings:CreateButton({
     Name = "Switch Server",
     Callback = function()
-        
+        SwitchServer.Apply()
     end,
 })
 
