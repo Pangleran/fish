@@ -54,5 +54,3 @@ function LowTexture.Apply()
 end
 
 return LowTexture
-
--- yes
