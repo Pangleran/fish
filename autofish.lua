@@ -26,8 +26,8 @@ function AutoFish.Aktif()
             for i = 1, 5 do
                 pcall(function() 
                     Events.fishing:FireServer() 
-                    end)
-                    task.wait(0.01)
+                end)
+            task.wait(0.01)
                 end
             task.wait(0.2)
         end)
