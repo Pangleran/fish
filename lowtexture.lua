@@ -1,12 +1,6 @@
 local LowTexture = {}
 
-local gpuActive = false
-local whiteScreen = nil
-
 function LowTexture.Aktif()
-    if gpuActive then return end
-    gpuActive = true
-
     pcall(function()
         settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
         game.Lighting.GlobalShadows = false
