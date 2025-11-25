@@ -6,7 +6,10 @@ function AutoFish.Aktif()
     end)
 end
 
--- REELIN / TARIK IKAN
+-- CAST / MELEMPAR
+
+
+-- REEL / MENARIK
 -- pcall(function()
 --     Events.fishing:FireServer()
 -- end)
