@@ -33,8 +33,6 @@ end
 
 local Fishing = Window:CreateTab("Fishing")
 
-local delayValue = 1
-
 Fishing:CreateInput({
     Name = "Fishing Delay",
     PlaceholderText = "example: 0.9",
