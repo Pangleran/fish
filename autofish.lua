@@ -13,10 +13,20 @@ local Events = {
 }
 
 AutoFish.Running = false
-AutoFish.Delay = 1 -- default delay
+AutoFish.DelayCast = 1
+AutoFish.DelayReel = 5
+AutoFish.DelayComplete = 0.2
 
-function AutoFish.SetDelay(v)
-    AutoFish.Delay = v
+function AutoFish.DelayCast(v)
+    AutoFish.DelayCast = v
+end
+
+function AutoFish.DelayReel(v)
+    AutoFish.DelayReel = v
+end
+
+function AutoFish.DelayComplete(v)
+    AutoFish.DelayComplete = v
 end
 
 function AutoFish.Aktif()
@@ -33,14 +43,14 @@ function AutoFish.Aktif()
             Events.minigame:InvokeServer(1.2854545116425, 1)
         end)
 
-        task.wait(AutoFish.Delay) -- ⭐ delay yg bisa diatur
+        task.wait(AutoFish.DelayCast)
 
-        for i = 1, 5 do
+        for i = 1, AutoFish.DelayReel do
             Events.fishing:FireServer()
             task.wait(0.01)
         end
 
-        task.wait(0.2)
+        task.wait(AutoFish.DelayComplete)
     end
 end
 
