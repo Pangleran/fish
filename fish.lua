@@ -37,11 +37,8 @@ Fishing:CreateInput({
     Name = "Delay Cast (default 1)",
     PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
-    Callback = function(text)
-        local value = tonumber(text)
-        if value then
-            AutoFish.SetDelayCast(value)
-        end
+    Callback = function(value)
+        AutoFish.SetDelayCast(value)
     end,
 })
 
@@ -49,11 +46,8 @@ Fishing:CreateInput({
     Name = "Delay Reel (default 5)",
     PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
-    Callback = function(text)
-        local value = tonumber(text)
-        if value then
-            AutoFish.SetDelayReel(value)
-        end
+    Callback = function(value)
+        AutoFish.SetDelayReel(value)
     end,
 })
 
@@ -61,11 +55,8 @@ Fishing:CreateInput({
     Name = "Delay Complete (default 0.2)",
     PlaceholderText = "xx",
     RemoveTextAfterFocusLost = false,
-    Callback = function(text)
-        local value = tonumber(text)
-        if value then
-            AutoFish.SetDelayComplete(value)
-        end
+    Callback = function(value)
+        AutoFish.SetDelayComplete(value)
     end,
 })
 
