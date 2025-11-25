@@ -13,6 +13,8 @@ local Events = {
     unequip = net:WaitForChild("RE/UnequipToolFromHotbar"),
 }
 
+function loopReel()
+    while true do
 
 function AutoFish.Aktif()
     while true do
