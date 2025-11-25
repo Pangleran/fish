@@ -77,9 +77,10 @@ Settings:CreateToggle({
     end,
 })
 
-Settings:CreateButton({
+Settings:CreateToggle({
     Name = "Low Texture",
-    Callback = function()
+    CurrentValue = false,
+    Callback = function(state)
         LowTexture.Apply()
     end,
 })
