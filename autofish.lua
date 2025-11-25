@@ -12,15 +12,6 @@ local Events = {
     equip = net:WaitForChild("RE/EquipToolFromHotbar"),
     unequip = net:WaitForChild("RE/UnequipToolFromHotbar"),
 }
-
-function loopReel()
-    while true do
-        pcall(function()
-            task.wait(0.02)
-            Events.fishing:FireServer()
-        end)
-    end
-end
         
 
 function AutoFish.Aktif()
