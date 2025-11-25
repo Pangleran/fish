@@ -17,24 +17,28 @@ local Window = Rayfield:CreateWindow({
 local Teleport = Window:CreateTab("Teleport")
 
 Teleport:CreateDropdown({
-    Name = "Teleport Locations",
+    Name = "Teleport",
     Options = {
         "Ocean",
-        "Classic Island [NEW]",
-        "Iron Cavern [NEW]",
-        "Underground (element progress)",
-        "Sisyphus (ghostfin progress)"
+        "Classic Island",
+        "Iron Cavern",
+        "Underground",
+        "Sisyphus"
     },
-    Callback = function(selectedOption)
-        if selectedOption == "Ocean" then
+    Callback = function(option)
+        if option == "Ocean" then
             TeleportModule.ToOcean()
-        elseif selectedOption == "Classic Island [NEW]" then
+
+        elseif option == "Classic Island" then
             TeleportModule.ToClassicIsland()
-        elseif selectedOption == "Iron Cavern [NEW]" then
+
+        elseif option == "Iron Cavern" then
             TeleportModule.ToIronCavern()
-        elseif selectedOption == "Underground (element progress)" then
+
+        elseif option == "Underground" then
             TeleportModule.ToUnderground()
-        elseif selectedOption == "Sisyphus (ghostfin progress)" then
+
+        elseif option == "Sisyphus" then
             TeleportModule.ToSisyphus()
         end
     end,
