@@ -35,16 +35,15 @@ local Fishing = Window:CreateTab("Fishing")
 
 local delayValue = 1
 
-Fishing:CreateSlider({
-    Name = "Auto Fish Delay",
-    Range = {0.1, 5},
-    Increment = 0.1,
-    Suffix = "s",
-    CurrentValue = 1,
-    Flag = "FishDelay",
-    Callback = function(value)
-        delayValue = value
-        AutoFish.SetDelay(value)
+Fishing:CreateInput({
+    Name = "Fishing Delay",
+    PlaceholderText = "example: 0.9",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        local value = tonumber(text)
+        if value then
+            AutoFish.SetDelay(value)
+        end
     end,
 })
 
