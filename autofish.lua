@@ -6,6 +6,8 @@ function AutoFish.Aktif()
     end)
 end
 
+--
+
 -- CAST / MELEMPAR
 -- pcall(function()
 --     Events.equip:FireServer(1)
