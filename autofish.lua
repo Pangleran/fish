@@ -1,15 +1,15 @@
 local AutoFish = {}
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local LocalPlayer = Players.LocalPlayer
 
 function AutoFish.Aktif()
     pcall(function()
-        
-        end
+        -- code
     end)
 end
+
+-- code reel / tarikan
+pcall(function()
+        Events.fishing:FireServer()
+        print("[Fishing] âœ… Reel")
+    end)
 
 return AutoFish
