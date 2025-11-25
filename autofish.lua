@@ -36,8 +36,6 @@ end
 
 function AutoFish.Nonaktif()
     pcall(function()
-        Events.cancel:FireServer()
-        task.wait(0.1)
         Events.unequip:FireServer(1)
     end)
 end
