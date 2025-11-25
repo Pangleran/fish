@@ -81,7 +81,9 @@ Settings:CreateToggle({
     Name = "Low Texture",
     CurrentValue = false,
     Callback = function(state)
-        LowTexture.Apply()
+        if state then
+            LowTexture.Aktif()
+            else
     end,
 })
 
