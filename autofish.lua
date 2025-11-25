@@ -1,7 +1,6 @@
 local AutoFish = {}
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
 local net = ReplicatedStorage.Packages._Index["sleitnick_net@0.2.0"].net
 
 local Events = {
@@ -13,8 +12,12 @@ local Events = {
     unequip = net:WaitForChild("RE/UnequipToolFromHotbar"),
 }
 
-
 AutoFish.Running = false
+AutoFish.Delay = 1 -- default delay
+
+function AutoFish.SetDelay(v)
+    AutoFish.Delay = v
+end
 
 function AutoFish.Aktif()
     AutoFish.Running = true
@@ -23,12 +26,14 @@ function AutoFish.Aktif()
         pcall(function()
             Events.equip:FireServer(1)
             task.wait(0.05)
+
             Events.charge:InvokeServer(1755848498.4834)
             task.wait(0.02)
+
             Events.minigame:InvokeServer(1.2854545116425, 1)
         end)
 
-        task.wait(0.9)
+        task.wait(AutoFish.Delay) -- ⭐ delay yg bisa diatur
 
         for i = 1, 5 do
             Events.fishing:FireServer()
