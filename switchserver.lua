@@ -1,10 +1,10 @@
-local SwitchServerModule = {}
+local SwitchServer = {}
 
 local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 local PlaceId = game.PlaceId
 
-function SwitchServerModule.Apply()
+function SwitchServer.Apply()
     local nextServer = nil
     local servers = {}
 
@@ -35,4 +35,4 @@ function SwitchServerModule.Apply()
     end
 end
 
-return SwitchServerModule
+return SwitchServer
