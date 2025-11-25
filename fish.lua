@@ -33,6 +33,21 @@ end
 
 local Fishing = Window:CreateTab("Fishing")
 
+local delayValue = 1
+
+Fishing:CreateSlider({
+    Name = "Auto Fish Delay",
+    Range = {0.1, 5},
+    Increment = 0.1,
+    Suffix = "s",
+    CurrentValue = 1,
+    Flag = "FishDelay",
+    Callback = function(value)
+        delayValue = value
+        AutoFish.SetDelay(value)
+    end,
+})
+
 Fishing:CreateToggle({
     Name = "Auto Fishing",
     CurrentValue = false,
@@ -45,6 +60,7 @@ Fishing:CreateToggle({
         end
     end,
 })
+
 
 local Settings = Window:CreateTab("Settings")
 
