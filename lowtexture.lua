@@ -29,11 +29,6 @@ function LowTexture.Nonaktif()
         game.Lighting.FogEnd = 100000
         setfpscap(0)
     end)
-
-    if whiteScreen then
-        whiteScreen:Destroy()
-        whiteScreen = nil
-    end
 end
 
 
