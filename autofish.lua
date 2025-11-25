@@ -13,6 +13,7 @@ local Events = {
     unequip = net:WaitForChild("RE/UnequipToolFromHotbar"),
 }
 
+
 function AutoFish.Aktif()
     while true do
         pcall(function()
@@ -21,7 +22,7 @@ function AutoFish.Aktif()
             Events.charge:InvokeServer(1755848498.4834)
             task.wait(0.02)
             Events.minigame:InvokeServer(1.2854545116425, 1)
-            loopRe
+            loopReel()
         end)
         wait(1)
     end
