@@ -16,8 +16,10 @@ local Window = Rayfield:CreateWindow({
 
 local Teleport = Window:CreateTab("Teleport")
 
-Teleport:CreateDropdown({
-    Name = "Teleport",
+local selectedLocation = nil
+
+local Dropdown = Teleport:CreateDropdown({
+    Name = "Pilih Lokasi",
     Options = {
         "Ocean",
         "Classic Island",
@@ -25,23 +27,32 @@ Teleport:CreateDropdown({
         "Underground",
         "Sisyphus"
     },
-    Callback = function(option)
-        if option == "Ocean" then
+    Callback = function(opt)
+        selectedLocation = opt
+    end
+})
+
+Teleport:CreateButton({
+    Name = "Teleport",
+    Callback = function()
+        if not selectedLocation then return end
+
+        if selectedLocation == "Ocean" then
             TeleportModule.ToOcean()
 
-        elseif option == "Classic Island" then
+        elseif selectedLocation == "Classic Island" then
             TeleportModule.ToClassicIsland()
 
-        elseif option == "Iron Cavern" then
+        elseif selectedLocation == "Iron Cavern" then
             TeleportModule.ToIronCavern()
 
-        elseif option == "Underground" then
+        elseif selectedLocation == "Underground" then
             TeleportModule.ToUnderground()
 
-        elseif option == "Sisyphus" then
+        elseif selectedLocation == "Sisyphus" then
             TeleportModule.ToSisyphus()
         end
-    end,
+    end
 })
 
 local Fishing = Window:CreateTab("Fishing")
