@@ -16,8 +16,7 @@ local Events = {
 function loopReel()
     while true do
         pcall(function()
-                
-                Events.fishing:FireServer()
+            Events.fishing:FireServer()
         end)
     end
 end
