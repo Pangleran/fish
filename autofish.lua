@@ -14,30 +14,38 @@ local Events = {
 }
         
 
+AutoFish.Running = false
+
 function AutoFish.Aktif()
-    while true do
-        pcall(function()
-            Events.equip:FireServer(1)
-            task.wait(0.05)
-            Events.charge:InvokeServer(1755848498.4834)
-            task.wait(0.02)
-            Events.minigame:InvokeServer(1.2854545116425, 1)
-            task.wait(0.9)
-            for i = 1, 5 do
-                pcall(function() 
-                    Events.fishing:FireServer() 
-                end)
-                task.wait(0.01)
-            end
-            task.wait(0.2)
-        end)
-    end
+AutoFish.Running = true
+
+while AutoFish.Running do
+    pcall(function()
+        Events.equip:FireServer(1)
+        task.wait(0.02)
+
+        Events.charge:InvokeServer(1755848498.4834)
+        task.wait(0.01)
+
+        Events.minigame:InvokeServer(1.2854545116425, 1)
+        task.wait(0.25)
+
+        for i = 1, 5 do
+            Events.fishing:FireServer()
+            task.wait(0.005)
+        end
+
+        task.wait(0.05)
+    end)
+end
 end
 
 function AutoFish.Nonaktif()
-    pcall(function()
-        Events.unequip:FireServer()
-    end)
+AutoFish.Running = false
+pcall(function()
+    Events.unequip:FireServer()
+end)
 end
+
 
 return AutoFish
