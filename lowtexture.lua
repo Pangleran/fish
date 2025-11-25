@@ -20,9 +20,6 @@ end
 -- FUNGSI NONAKTIF
 -- ======================
 function LowTexture.Nonaktif()
-    if not gpuActive then return end
-    gpuActive = false
-
     pcall(function()
         settings().Rendering.QualityLevel = Enum.QualityLevel.Level02
         game.Lighting.GlobalShadows = true
