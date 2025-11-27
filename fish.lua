@@ -63,34 +63,34 @@ Fishing:CreateInput({
 Fishing:CreateToggle({
     Name = "Auto Fishing",
     Callback = function(state)
-            if state then
-                AutoFish.run()
-            else
-                AutoFish.stop()
-            end
-        end,
-    })
+        if state then
+            AutoFish.run()
+        else
+            AutoFish.stop()
+        end
+    end,
+})
 
 Fishing:CreateButton({
-        Name = "Recovery Fishing",
-        Callback = function()
-            AutoFish.recovery()
-        end,
-    })
+    Name = "Recovery Fishing",
+    Callback = function()
+        AutoFish.recovery()
+    end,
+})
 
 
 local Settings = Window:CreateTab("Settings")
 
 Settings:CreateToggle({
-        Name = "Anti AFK",
-        Callback = function(state)
-            if state then
-                AntiAfk.run()
-            else
-                AntiAfk.stop()
-            end
-        end,
-    })
+    Name = "Anti AFK",
+    Callback = function(state)
+        if state then
+            AntiAfk.run()
+        else
+            AntiAfk.stop()
+        end
+    end,
+})
 
 Settings:CreateToggle({
     Name = "Low Texture",
@@ -104,15 +104,15 @@ Settings:CreateToggle({
 })
 
 Settings:CreateToggle({
-        Name = "Auto Sell Fish",
-        Callback = function(state)
-            if state then
-                AutoSell.run()
-            else
-                AutoSell.stop()
-            end
-        end,
-    })
+    Name = "Auto Sell Fish",
+    Callback = function(state)
+        if state then
+            AutoSell.run()
+        else
+            AutoSell.stop()
+        end
+    end,
+})
 
 Settings:CreateButton({
     Name = "Exit",
