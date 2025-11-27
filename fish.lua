@@ -62,13 +62,11 @@ Fishing:CreateInput({
 
 Fishing:CreateToggle({
     Name = "Auto Fishing",
-    CurrentValue = false,
-    Flag = "AutoFishToggle",
     Callback = function(state)
         if state then
-            AutoFish.Aktif()
+            AutoFish.run()
         else
-            AutoFish.Nonaktif()
+            AutoFish.stop()
         end
     end,
 })
@@ -89,12 +87,11 @@ Settings:CreateToggle({
 
 Settings:CreateToggle({
     Name = "Low Texture",
-    CurrentValue = false,
     Callback = function(state)
         if state then
-            LowTexture.Aktif()
+            LowTexture.run()
         else
-            LowTexture.Nonaktif()
+            LowTexture.stop()
         end
     end,
 })
