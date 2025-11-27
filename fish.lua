@@ -63,21 +63,20 @@ Fishing:CreateInput({
 Fishing:CreateToggle({
     Name = "Auto Fishing",
     Callback = function(state)
-        if state then
-            AutoFish.run()
-        else
-            AutoFish.stop()
-        end
-    end,
-})
+            if state then
+                AutoFish.run()
+            else
+                AutoFish.stop()
+            end
+        end,
+    })
 
 Fishing:CreateButton({
         Name = "Recovery Fishing",
         Callback = function()
             AutoFish.recovery()
-        end
-    end,
-})
+        end,
+    })
 
 
 local Settings = Window:CreateTab("Settings")
