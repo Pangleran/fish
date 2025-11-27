@@ -6,20 +6,16 @@ local VirtualUser = game:GetService("VirtualUser")
 
 local AntiAFKConnection
 
-function AntiAfk.Apply(state)
-  if state then
-    if AntiAFKConnection then AntiAFKConnection:Disconnect() end
-
-    AntiAFKConnection = LocalPlayer.Idled:Connect(function()
+function AntiAfk.run()
+  AntiAFKConnection = LocalPlayer.Idled:Connect(function()
       VirtualUser:CaptureController()
       VirtualUser:ClickButton2(Vector2.new())
     end)
-  else
-    if AntiAFKConnection then
-      AntiAFKConnection:Disconnect()
-      AntiAFKConnection = nil
-    end
-  end
+end
+
+function AntiAfk.stop()
+  AntiAFKConnection:Disconnect()
+  AntiAFKConnection = nil
 end
 
 return AntiAfk
