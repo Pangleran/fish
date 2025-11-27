@@ -1,6 +1,6 @@
 local LowTexture = {}
 
-function LowTexture.Aktif()
+function LowTexture.run()
     pcall(function()
         for _, v in pairs(game:GetDescendants()) do
             if v:IsA("BasePart") then
@@ -24,7 +24,7 @@ function LowTexture.Aktif()
     end)
 end
 
-function LowTexture.Nonaktif()
+function LowTexture.stop()
     pcall(function()
         for _, v in pairs(game:GetDescendants()) do
             if v:IsA("BasePart") then
@@ -44,7 +44,7 @@ function LowTexture.Nonaktif()
 
         Lighting.GlobalShadows = true
         Lighting.FogEnd = 100000
-        settings().Rendering.QualityLevel = Enum.QualityLevel.Level10
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
     end)
 end
 
