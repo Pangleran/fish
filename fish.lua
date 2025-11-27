@@ -80,9 +80,9 @@ Settings:CreateToggle({
         Name = "Anti AFK",
         Callback = function(state)
             if state then
-                AutoAfk.run()
+                AntiAfk.run()
             else
-                AutoAfk.stop()
+                AntiAfk.stop()
             end
         end,
     })
