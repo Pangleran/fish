@@ -77,13 +77,15 @@ Fishing:CreateToggle({
 local Settings = Window:CreateTab("Settings")
 
 Settings:CreateToggle({
-    Name = "Anti AFK",
-    CurrentValue = false,
-    Flag = "AntiAFKToggle",
-    Callback = function(state)
-        AntiAfk.Apply(state)
-    end,
-})
+        Name = "Anti AFK",
+        Callback = function(state)
+            if state then
+                AutoAfk.run()
+            else
+                AutoAfk.stop()
+            end
+        end,
+    })
 
 Settings:CreateToggle({
     Name = "Low Texture",
