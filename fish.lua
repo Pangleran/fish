@@ -71,6 +71,14 @@ Fishing:CreateToggle({
     end,
 })
 
+Fishing:CreateButton({
+        Name = "Recovery Fishing",
+        Callback = function()
+            AutoFish.recovery()
+        end
+    end,
+})
+
 
 local Settings = Window:CreateTab("Settings")
 
