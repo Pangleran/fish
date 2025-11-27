@@ -29,7 +29,7 @@ function AutoFish.SetDelayComplete(v)
     AutoFish.DelayCompleteValue = v
 end
 
-function AutoFish.Aktif()
+function AutoFish.run()
     AutoFish.Running = true
 
     while AutoFish.Running do
@@ -54,11 +54,22 @@ function AutoFish.Aktif()
     end
 end
 
-function AutoFish.Nonaktif()
+function AutoFish.stop()
     AutoFish.Running = false
     pcall(function()
+        Events.cancel:InvokeServer()
         Events.unequip:FireServer()
     end)
+end
+
+function AutoFish.recovery()
+    if AutoFish.Running == true then
+        AutoFish.Running = false
+        task.wait()
+        Events.cancel:InvokeServer()
+        task.wait()
+        Events.unequip:FireServer()
+    end
 end
 
 return AutoFish
