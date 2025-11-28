@@ -1,5 +1,15 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+Window:Gradient({
+    Enabled = true,
+    Colors = {
+        Color3.fromRGB(0, 20, 40),   -- Hitam kebiruan (kedalaman laut)
+        Color3.fromRGB(0, 80, 160),  -- Biru laut tua
+        Color3.fromRGB(0, 180, 255)  -- Biru terang (permukaan)
+    },
+    Rotation = 90
+})
+
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
 local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
@@ -17,7 +27,7 @@ local Window = WindUI:CreateWindow({
     MinSize = Vector2.new(560, 350),
     MaxSize = Vector2.new(850, 560),
     Transparent = true,
-    Theme = "Ocean",
+    Theme = "Dark",
     Resizable = true,
     SideBarWidth = 200,
     BackgroundImageTransparency = 0.42,
