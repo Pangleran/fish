@@ -1,11 +1,13 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+--[[
 WindUI:Gradient({                                                      
     ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            
     ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        
 }, {                                                                            
     Rotation = 0,                                                               
 }),
+--]]
 
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
