@@ -43,6 +43,7 @@ FishingTab:CreateInput({
     Name = "Set Delay Fishing",
     PlaceholderText = "default: 1",
     Callback = function(v)
+        if v == "" then return end
         AutoFish.SetDelayFishing(v)
         Luna:Notification({
             Title = "Set Delay ✅",
