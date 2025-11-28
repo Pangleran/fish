@@ -23,7 +23,7 @@ local Window = Luna:CreateWindow({
         },
         SecondAction = {
             Enabled = true,
-            Type = "Link",
+            Type = "Discord",
             Parameter = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc"
         }
     }
@@ -53,8 +53,7 @@ end
 local FishingTab = Window:CreateTab({
     Name = "Fishing",
     Icon = "explore",
-    ImageSource = "Material",
-    ShowTitle = true
+    ImageSource = "Material"
 })
 
 FishingTab:CreateInput({
