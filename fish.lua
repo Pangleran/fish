@@ -9,22 +9,7 @@ local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 local Window = Luna:CreateWindow({
     Name = "Fish it - Iky Fareza",
     Subtitle = "Luna UI",
-    KeySystem = true,
-    KeySettings = {
-        Title = "Key System - Iky Fareza",
-        Subtitle = "Free Key? Join WhatsApp",
-        Note = "copy key to get link whatsapp",
-        SaveKey = true,
-        Key = {
-            "uci",
-            "iky"
-        },
-        SecondAction = {
-            Enabled = true,
-            Type = "Link",
-            Parameter = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc"
-        }
-    }
+    LoadingEnabled = false
 })
 
 local TeleportTab = Window:CreateTab({
