@@ -59,6 +59,11 @@ local Window = WindUI:CreateWindow({
     },
 })
 
+Window:DisableTopbarButtons({
+    "Close", 
+    "Fullscreen",
+})
+
 Window:EditOpenButton({
     Title = "Iky Fareza",
     Icon = "monitor",
