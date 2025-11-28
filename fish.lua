@@ -8,7 +8,7 @@ local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 
 local Window = WindUI:CreateWindow({
     Title = "Fish it - Iky Fareza",
-    Theme = WindUI.Themes.Dark,
+    Theme = "Dark",
 })
 
 local TeleportTab = Window:CreateTab("Teleport")
