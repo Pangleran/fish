@@ -44,6 +44,12 @@ FishingTab:CreateInput({
     PlaceholderText = "default: 1",
     Callback = function(v)
         AutoFish.SetDelayFishing(v)
+        Luna:Notification({
+            Title = "Set Delay ✅",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "to " .. v .. " second"
+        })
     end
 })
 
