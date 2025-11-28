@@ -52,7 +52,7 @@ end
 
 local FishingTab = Window:CreateTab({
     Name = "Fishing",
-    Icon = "explore",
+    Icon = "set_meal",
     ImageSource = "Material"
 })
 
