@@ -10,7 +10,7 @@ local Window = Luna:CreateWindow({
     Name = "Fish it - Iky Fareza",
     Subtitle = "Luna UI",
     LoadingEnabled = true,
-    LoadingTitle = "Luna",
+    LoadingTitle = "Iky Fareza",
     LoadingSubtitle = "Loading..."
 })
 
