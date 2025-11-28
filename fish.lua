@@ -11,7 +11,7 @@ local Window = WindUI:CreateWindow({
     Theme = "Dark",
 })
 
-local TeleportTab = Window:CreateTab("Teleport")
+local TeleportTab = Window:Tab("Teleport")
 
 local teleportList = {
     ["Ocean"] = TeleportModule.ToOcean,
@@ -40,7 +40,7 @@ TeleportTab:Button({
     end
 })
 
-local FishingTab = Window:CreateTab("Fishing")
+local FishingTab = Window:Tab("Fishing")
 
 FishingTab:Input({
     Title = "Set Delay Fishing",
@@ -74,7 +74,7 @@ FishingTab:Button({
     end
 })
 
-local SettingsTab = Window:CreateTab("Settings")
+local SettingsTab = Window:Tab("Settings")
 
 SettingsTab:Toggle({
     Title = "Anti AFK",
