@@ -53,7 +53,8 @@ end
 local FishingTab = Window:CreateTab({
     Name = "Fishing",
     Icon = "explore",
-    ImageSource = "Material"
+    ImageSource = "Material",
+    ShowTitle = true
 })
 
 FishingTab:CreateInput({
