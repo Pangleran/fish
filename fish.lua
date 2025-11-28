@@ -7,17 +7,17 @@ local AutoFish = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/autosell.lua"))()
 
 local Window = WindUI:CreateWindow({
-    Title = "Fish it - Iky Fareza",
-    Icon = "door-open", -- lucide icon
-    Author = "by .ftgs and .ftgs",
-    Folder = "MySuperHub",
+    Title = "Fish it",
+    Icon = "door-open",
+    Author = "by iky fareza",
+    Folder = "fishit_ikyfareza",
     
     -- ↓ This all is Optional. You can remove it.
     Size = UDim2.fromOffset(580, 460),
     MinSize = Vector2.new(560, 350),
     MaxSize = Vector2.new(850, 560),
     Transparent = true,
-    Theme = "Dark",
+    Theme = "Ocean",
     Resizable = true,
     SideBarWidth = 200,
     BackgroundImageTransparency = 0.42,
@@ -38,7 +38,7 @@ local Window = WindUI:CreateWindow({
         -- ↓ Optional. You can remove it.
         Key = { "iky", "cici" },
         
-        Note = "join whatsapp and get key",
+        Note = "press get key and join whatsapp",
         
         -- ↓ Optional. You can remove it.
         --[[
@@ -52,7 +52,7 @@ local Window = WindUI:CreateWindow({
         URL = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc",
         
         -- ↓ Optional. You can remove it.
-        SaveKey = true, -- automatically save and load the key.
+        SaveKey = false, -- automatically save and load the key.
         
         -- ↓ Optional. You can remove it.
         -- API = {} ← Services. Read about it below ↓
