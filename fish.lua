@@ -11,14 +11,16 @@ local Window = Luna:CreateWindow({
     Subtitle = "Luna UI",
     KeySystem = true,
     KeySettings = {
-        Title = "Fish it - Key System",
-        Subtitle = "Enter Key",
-        Note = "Join Grup WhatsApp Untuk Mendapatkan Key",
+        Title = "Key System - Iky Fareza",
+        Note = "Free Key? Join WhatsApp",
         SaveKey = true,
         Key = {
             "uci",
             "iky"
         },
+        FisrtActionText = "Login Key",
+        SecondActionText = "Bergabung Ke WhatsApp",
+        SwapActions = false,
         SecondAction = {
             Enabled = true,
             Type = "LINK",
