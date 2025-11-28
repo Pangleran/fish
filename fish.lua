@@ -23,7 +23,7 @@ local teleportList = {
 
 local selectedLocation = nil
 
-TeleportTab:CreateDropdown({
+TeleportTab:Dropdown({
     Title = "Teleport Locations",
     List = {"Ocean","Classic Island [NEW]","Iron Cavern [NEW]","Underground","Sisyphus"},
     Callback = function(v)
@@ -31,7 +31,7 @@ TeleportTab:CreateDropdown({
     end
 })
 
-TeleportTab:CreateButton({
+TeleportTab:Button({
     Title = "Teleport to Selected",
     Callback = function()
         if selectedLocation then
@@ -42,7 +42,7 @@ TeleportTab:CreateButton({
 
 local FishingTab = Window:CreateTab("Fishing")
 
-FishingTab:CreateInput({
+FishingTab:Input({
     Title = "Set Delay Fishing",
     PlaceholderText = "default: 1",
     Callback = function(v)
@@ -59,7 +59,7 @@ FishingTab:CreateInput({
     end
 })
 
-FishingTab:CreateToggle({
+FishingTab:Toggle({
     Title = "Auto Fishing",
     Default = false,
     Callback = function(s)
@@ -67,7 +67,7 @@ FishingTab:CreateToggle({
     end
 })
 
-FishingTab:CreateButton({
+FishingTab:Button({
     Title = "Recovery Fishing",
     Callback = function()
         AutoFish.recovery()
@@ -76,28 +76,28 @@ FishingTab:CreateButton({
 
 local SettingsTab = Window:CreateTab("Settings")
 
-SettingsTab:CreateToggle({
+SettingsTab:Toggle({
     Title = "Anti AFK",
     Callback = function(s)
         if s then AntiAfk.run() else AntiAfk.stop() end
     end
 })
 
-SettingsTab:CreateToggle({
+SettingsTab:Toggle({
     Title = "Low Texture",
     Callback = function(s)
         if s then LowTexture.run() else LowTexture.stop() end
     end
 })
 
-SettingsTab:CreateToggle({
+SettingsTab:Toggle({
     Title = "Auto Sell Fish",
     Callback = function(s)
         if s then AutoSell.run() else AutoSell.stop() end
     end
 })
 
-SettingsTab:CreateButton({
+SettingsTab:Button({
     Title = "Exit",
     Callback = function()
         WindUI:Destroy()
