@@ -25,7 +25,11 @@ Window:EditOpenButton({
     Draggable = true,
 })
 
-local TeleportTab = Window:Tab("Teleport")
+local TeleportTab = Window:Tab({
+    Title = "Teleport",
+    Icon = "Bird",
+    Locked = false,
+})
 
 local teleportList = {
     ["Ocean"] = TeleportModule.ToOcean,
@@ -54,7 +58,11 @@ TeleportTab:Button({
     end
 })
 
-local FishingTab = Window:Tab("Fishing")
+local FishingTab = Window:Tab({
+    Title = "Fishing",
+    Icon = "Bird",
+    Locked = false,
+})
 
 FishingTab:Input({
     Title = "Set Delay Fishing",
@@ -88,7 +96,11 @@ FishingTab:Button({
     end
 })
 
-local SettingsTab = Window:Tab("Settings")
+local SettingsTab = Window:Tab({
+    Title = "Settings",
+    Icon = "Bird",
+    Locked = false,
+})
 
 SettingsTab:Toggle({
     Title = "Anti AFK",
