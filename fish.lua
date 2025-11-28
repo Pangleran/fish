@@ -64,7 +64,8 @@ local FishingTab = Window:Tab({
 
 FishingTab:Input({
     Title = "Set Delay Fishing",
-    PlaceholderText = "default: 1",
+    Type = "Input",
+    Placeholder = "0.1~2",
     Callback = function(v)
         local num = tonumber(v)
         if not num then return end
