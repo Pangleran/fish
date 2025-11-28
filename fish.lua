@@ -11,6 +11,20 @@ local Window = WindUI:CreateWindow({
     Theme = "Dark",
 })
 
+Window:EditOpenButton({
+    Title = "Iky Fareza",
+    Icon = "monitor",
+    CornerRadius = UDim.new(0,16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new(
+        Color3.fromHex("FF0F7B"), 
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true,
+})
+
 local TeleportTab = Window:Tab("Teleport")
 
 local teleportList = {
