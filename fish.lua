@@ -14,6 +14,7 @@ local Window = Luna:CreateWindow({
     KeySystem = true,
     KeySettings = {
         Title = "Key System - Iky Fareza",
+        Subtitle = "Enter Key",
         Note = "Free Key? Join WhatsApp",
         SaveKey = true,
         Key = {
