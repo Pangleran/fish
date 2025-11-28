@@ -45,13 +45,14 @@ FishingTab:CreateInput({
     Callback = function(v)
         local num = tonumber(v)
         if not num then return end
-        if num < 0.1 or num > 2 then return end
-        AutoFish.SetDelayFishing(v)
+        if num < 0.1 then num = 0.1 end
+        if num > 2 then num = 2 end
+        AutoFish.SetDelayFishing(num)
         Luna:Notification({
             Title = "✅ Set Delay",
             Icon = "notifications_active",
             ImageSource = "Material",
-            Content = "to " .. v .. " second"
+            Content = "to " .. num .. " second"
         })
     end
 })
