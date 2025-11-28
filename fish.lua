@@ -12,8 +12,6 @@ local Window = Luna:CreateWindow({
     LoadingEnabled = false
 })
 
-local killspam = 0
-
 local TeleportTab = Window:CreateTab({
     Name = "Teleport",
     Icon = "map",
@@ -45,19 +43,16 @@ FishingTab:CreateInput({
     Name = "Set Delay Fishing",
     PlaceholderText = "default: 1",
     Callback = function(v)
-        killspam = tick()
-
-        task.delay(0.3, function()
-            if tick() - killspam < 0.3 then return end
-            if v == "" then return end
-            AutoFish.SetDelayFishing(v)
-            Luna:Notification({
-                Title = "✅ Set Delay",
-                Icon = "notifications_active",
-                ImageSource = "Material",
-                Content = "to " .. v .. " second"
-            })
-        end)
+        local num = tonumber(v)
+        if not num then return end
+        if num < 0.1 or num > 2 then return end
+        AutoFish.SetDelayFishing(v)
+        Luna:Notification({
+            Title = "✅ Set Delay",
+            Icon = "notifications_active",
+            ImageSource = "Material",
+            Content = "to " .. v .. " second"
+        })
     end
 })
 
