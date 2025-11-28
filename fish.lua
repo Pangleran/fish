@@ -43,7 +43,7 @@ local selectedLocation = nil
 TeleportTab:Dropdown({
     Title = "Teleport Locations",
     Values = {"Ocean","Classic Island [NEW]","Iron Cavern [NEW]","Underground","Sisyphus"},
-    Multi = false,
+    Value = {"Ocean"},
     Callback = function(v)
         selectedLocation = v
     end
