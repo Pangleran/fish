@@ -1,13 +1,22 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
-Window:Gradient({
-    Enabled = true,
-    Colors = {
-        Color3.fromRGB(0, 20, 40),   -- Hitam kebiruan (kedalaman laut)
-        Color3.fromRGB(0, 80, 160),  -- Biru laut tua
-        Color3.fromRGB(0, 180, 255)  -- Biru terang (permukaan)
+WindUI:Gradient({
+    ["0"] = {
+        Color = Color3.fromHex("#00111d"), -- Biru sangat gelap (deep ocean)
+        Transparency = 0
     },
-    Rotation = 90
+
+    ["50"] = {
+        Color = Color3.fromHex("#004e89"), -- Biru tua ke laut dalam
+        Transparency = 0
+    },
+
+    ["100"] = {
+        Color = Color3.fromHex("#009dff"), -- Biru muda terang seperti permukaan air
+        Transparency = 0
+    },
+}, {
+    Rotation = 90, -- Bisa 0, 45, 90, 180 sesuai arah gradient
 })
 
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
