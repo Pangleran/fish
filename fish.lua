@@ -1,12 +1,5 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
-WindUI:Gradient({                                                      
-    ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            
-    ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        
-}, {                                                                            
-    Rotation = 0,                                                               
-}),
-
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
 local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
@@ -114,9 +107,13 @@ TeleportTab:Button({
     Title = "Teleport to Selected",
     Desc = "berpindah ke pulau",
     Callback = function()
-        if selectedLocation then
-            teleportList[selectedLocation]()
-        end
+        if selectedLocation == nil then return end
+        teleportList[selectedLocation]()
+        WindUI:Notify({
+            Title = "✅ Teleport",
+            Content = "to " .. selectedLocation,
+            Duration = 2
+        })
     end
 })
 
@@ -137,7 +134,7 @@ FishingTab:Input({
         if num > 2 then num = 2 end
         AutoFish.SetDelayFishing(num)
         WindUI:Notify({
-            Title = "Set Delay",
+            Title = "✅ Set Delay",
             Content = "to " .. num .. " second",
             Duration = 2
         })
@@ -149,7 +146,21 @@ FishingTab:Toggle({
     Desc = "otomatis memancing",
     Default = false,
     Callback = function(s)
-        if s then AutoFish.run() else AutoFish.stop() end
+        if s then
+            AutoFish.run()
+            WindUI:Notify({
+                Title = "🟢 Fishing",
+                Content = "mengaktifkan auto fishing",
+                Duration = 2
+            })
+        else
+            AutoFish.stop()
+            WindUI:Notify({
+                Title = "🔴 Fishing",
+                Content = "menghentikan auto fishing",
+                Duration = 2
+            })
+        end
     end
 })
 
@@ -158,6 +169,11 @@ FishingTab:Button({
     Desc = "memperbaiki bug/crash pancing",
     Callback = function()
         AutoFish.recovery()
+        WindUI:Notify({
+            Title = "✅ Recovery Fishing",
+            Content = "memperbaiki bug atau crash",
+            Duration = 2
+        })
     end
 })
 
@@ -170,7 +186,21 @@ SettingsTab:Toggle({
     Title = "Anti AFK",
     Desc = "menghindari putus koneksi",
     Callback = function(s)
-        if s then AntiAfk.run() else AntiAfk.stop() end
+        if s then
+            AntiAfk.run()
+            WindUI:Notify({
+                Title = "🟢 Anti Afk",
+                Content = "mengaktifkan anti disconnect",
+                Duration = 2
+            })
+        else
+            AntiAfk.stop()
+            WindUI:Notify({
+                Title = "🔴 Anti Afk",
+                Content = "menghentikan anti disconnect",
+                Duration = 2
+            })
+        end
     end
 })
 
@@ -178,7 +208,21 @@ SettingsTab:Toggle({
     Title = "Low Texture",
     Desc = "smooth & boost fps",
     Callback = function(s)
-        if s then LowTexture.run() else LowTexture.stop() end
+        if s then
+            LowTexture.run()
+            WindUI:Notify({
+                Title = "🟢 Low Texture",
+                Content = "mengaktifkan smooth texture",
+                Duration = 2
+            })
+        else
+            LowTexture.stop()
+            WindUI:Notify({
+                Title = "🔴 Low Texture",
+                Content = "mengembalikan texture",
+                Duration = 2
+            })
+        end
     end
 })
 
@@ -186,6 +230,20 @@ SettingsTab:Toggle({
     Title = "Auto Sell Fish",
     Desc = "otomatis setiap 1 menit",
     Callback = function(s)
-        if s then AutoSell.run() else AutoSell.stop() end
+        if s then
+            AutoSell.run()
+            WindUI:Notify({
+                Title = "🟢 Selling Fish",
+                Content = "mengaktifkan auto sell",
+                Duration = 2
+            })
+        else
+            AutoSell.stop()
+            WindUI:Notify({
+                Title = "🔴 Selling Fish",
+                Content = "menghentikan auto sell",
+                Duration = 2
+            })
+        end
     end
 })
