@@ -27,7 +27,6 @@ Window:EditOpenButton({
 
 local TeleportTab = Window:Tab({
     Title = "Teleport",
-    Icon = "Bird",
     Locked = false,
 })
 
@@ -60,7 +59,6 @@ TeleportTab:Button({
 
 local FishingTab = Window:Tab({
     Title = "Fishing",
-    Icon = "Bird",
     Locked = false,
 })
 
@@ -98,7 +96,6 @@ FishingTab:Button({
 
 local SettingsTab = Window:Tab({
     Title = "Settings",
-    Icon = "Bird",
     Locked = false,
 })
 
@@ -120,12 +117,5 @@ SettingsTab:Toggle({
     Title = "Auto Sell Fish",
     Callback = function(s)
         if s then AutoSell.run() else AutoSell.stop() end
-    end
-})
-
-SettingsTab:Button({
-    Title = "Exit",
-    Callback = function()
-        WindUI:Destroy()
     end
 })
