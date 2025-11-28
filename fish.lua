@@ -9,21 +9,37 @@ local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 local Window = WindUI:CreateWindow({
     Title = "Fish it - Iky Fareza",
     Theme = "Dark",
+
+    PrimaryColor = Color3.fromHex("A259FF"),
+    SecondaryColor = Color3.fromHex("2B1A38"),
+    TertiaryColor = Color3.fromHex("1A1122"),
+
+    TextColor = Color3.fromHex("E4CCFF"),
+    Font = Enum.Font.GothamMedium,
+    TitleFont = Enum.Font.GothamBold,
+
+    TitleSize = 20,
+    TextSize = 17,
+
+    CornerRadius = UDim.new(0, 14),
+    Padding = 12,
 })
 
 Window:EditOpenButton({
     Title = "Iky Fareza",
-    Icon = "monitor",
+    Icon = "widgets",
     CornerRadius = UDim.new(0,16),
     StrokeThickness = 2,
     Color = ColorSequence.new(
-        Color3.fromHex("FF0F7B"), 
-        Color3.fromHex("F89B29")
+        Color3.fromHex("A259FF"), 
+        Color3.fromHex("6E00FF")
     ),
-    OnlyMobile = false,
-    Enabled = true,
     Draggable = true,
 })
+
+--------------------------------------------------------
+-- TELEPORT TAB
+--------------------------------------------------------
 
 local TeleportTab = Window:Tab({
     Title = "Teleport",
@@ -53,12 +69,17 @@ TeleportTab:Dropdown({
 TeleportTab:Button({
     Title = "Teleport to Selected",
     Desc = "berpindah ke pulau",
+    Icon = "send",
     Callback = function()
         if selectedLocation then
             teleportList[selectedLocation]()
         end
     end
 })
+
+--------------------------------------------------------
+-- FISHING TAB
+--------------------------------------------------------
 
 local FishingTab = Window:Tab({
     Title = "Fishing",
@@ -75,11 +96,13 @@ FishingTab:Input({
         if not num then return end
         if num < 0.1 then num = 0.1 end
         if num > 2 then num = 2 end
+
         AutoFish.SetDelayFishing(num)
+
         WindUI:Notify({
             Title = "Set Delay",
             Content = "to " .. num .. " second",
-            Duration = 2
+            Duration = 2,
         })
     end
 })
@@ -96,10 +119,15 @@ FishingTab:Toggle({
 FishingTab:Button({
     Title = "Recovery Fishing",
     Desc = "memperbaiki bug/crash pancing",
+    Icon = "restart_alt",
     Callback = function()
         AutoFish.recovery()
     end
 })
+
+--------------------------------------------------------
+-- SETTINGS TAB
+--------------------------------------------------------
 
 local SettingsTab = Window:Tab({
     Title = "Settings",
