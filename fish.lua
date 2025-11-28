@@ -132,12 +132,13 @@ FishingTab:Input({
         if not num then return end
         if num < 0.1 then num = 0.1 end
         if num > 2 then num = 2 end
-        AutoFish.SetDelayFishing(num)
         WindUI:Notify({
             Title = "✅ Set Delay",
             Content = "to " .. num .. " second",
             Duration = 2
         })
+        task.wait(0.5)
+        AutoFish.SetDelayFishing(num)
     end
 })
 
@@ -147,19 +148,21 @@ FishingTab:Toggle({
     Default = false,
     Callback = function(s)
         if s then
-            AutoFish.run()
             WindUI:Notify({
                 Title = "🟢 Fishing",
                 Content = "mengaktifkan auto fishing",
                 Duration = 2
             })
+            task.wait(0.5)
+            AutoFish.run()
         else
-            AutoFish.stop()
             WindUI:Notify({
                 Title = "🔴 Fishing",
                 Content = "menghentikan auto fishing",
                 Duration = 2
             })
+            task.wait(0.5)
+            AutoFish.stop()
         end
     end
 })
@@ -168,12 +171,13 @@ FishingTab:Button({
     Title = "Recovery Fishing",
     Desc = "memperbaiki bug/crash pancing",
     Callback = function()
-        AutoFish.recovery()
         WindUI:Notify({
             Title = "✅ Recovery Fishing",
             Content = "memperbaiki bug atau crash",
             Duration = 2
         })
+        task.wait(0.5)
+        AutoFish.recovery()
     end
 })
 
@@ -187,19 +191,21 @@ SettingsTab:Toggle({
     Desc = "menghindari putus koneksi",
     Callback = function(s)
         if s then
-            AntiAfk.run()
             WindUI:Notify({
                 Title = "🟢 Anti Afk",
                 Content = "mengaktifkan anti disconnect",
                 Duration = 2
             })
+            task.wait(0.5)
+            AntiAfk.run()
         else
-            AntiAfk.stop()
             WindUI:Notify({
                 Title = "🔴 Anti Afk",
                 Content = "menghentikan anti disconnect",
                 Duration = 2
             })
+            task.wait(0.5)
+            AntiAfk.stop()
         end
     end
 })
@@ -209,19 +215,21 @@ SettingsTab:Toggle({
     Desc = "smooth & boost fps",
     Callback = function(s)
         if s then
-            LowTexture.run()
             WindUI:Notify({
                 Title = "🟢 Low Texture",
                 Content = "mengaktifkan smooth texture",
                 Duration = 2
             })
+            task.wait(0.5)
+            LowTexture.run()
         else
-            LowTexture.stop()
             WindUI:Notify({
                 Title = "🔴 Low Texture",
                 Content = "mengembalikan texture",
                 Duration = 2
             })
+            task.wait(0.5)
+            Lowtexture.stop()
         end
     end
 })
@@ -231,19 +239,21 @@ SettingsTab:Toggle({
     Desc = "otomatis setiap 1 menit",
     Callback = function(s)
         if s then
-            AutoSell.run()
             WindUI:Notify({
                 Title = "🟢 Selling Fish",
                 Content = "mengaktifkan auto sell",
                 Duration = 2
             })
+            task.wait(0.5)
+            AutoSell.run()
         else
-            AutoSell.stop()
             WindUI:Notify({
                 Title = "🔴 Selling Fish",
                 Content = "menghentikan auto sell",
                 Duration = 2
             })
+            task.wait(0.5)
+            AutoSell.stop()
         end
     end
 })
