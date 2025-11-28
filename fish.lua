@@ -1,7 +1,5 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 
--- Luna.Configuration.InterfaceToggleNotifications = false
-
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
 local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
@@ -15,6 +13,7 @@ local Window = Luna:CreateWindow({
     KeySettings = {
         Title = "Key System - Iky Fareza",
         Subtitle = "Free Key? Join WhatsApp",
+        Note = "copy key to get link whatsapp",
         SaveKey = true,
         Key = {
             "uci",
@@ -22,7 +21,7 @@ local Window = Luna:CreateWindow({
         },
         SecondAction = {
             Enabled = true,
-            Type = "Discord",
+            Type = "Link",
             Parameter = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc"
         }
     }
