@@ -42,26 +42,10 @@ local FishingTab = Window:CreateTab({
 })
 
 FishingTab:CreateInput({
-    Name = "Delay Cast",
+    Name = "Set Delay Fishing",
     PlaceholderText = "1",
     Callback = function(v)
         AutoFish.SetDelayCast(v)
-    end
-})
-
-FishingTab:CreateInput({
-    Name = "Delay Reel",
-    PlaceholderText = "5",
-    Callback = function(v)
-        AutoFish.SetDelayReel(v)
-    end
-})
-
-FishingTab:CreateInput({
-    Name = "Delay Complete",
-    PlaceholderText = "0.2",
-    Callback = function(v)
-        AutoFish.SetDelayComplete(v)
     end
 })
 
