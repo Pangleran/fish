@@ -20,9 +20,11 @@ local Window = Luna:CreateWindow({
             "uci",
             "iky"
         },
+        --[[
         FisrtActionText = "Login Key",
         SecondActionText = "Bergabung Ke WhatsApp",
         SwapActions = false,
+        --]]
         SecondAction = {
             Enabled = true,
             Type = "LINK",
