@@ -52,7 +52,7 @@ local Window = WindUI:CreateWindow({
         URL = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc",
         
         -- ↓ Optional. You can remove it.
-        SaveKey = true, -- automatically save and load the key.
+        SaveKey = false, -- automatically save and load the key.
         
         -- ↓ Optional. You can remove it.
         -- API = {} ← Services. Read about it below ↓
