@@ -21,12 +21,9 @@ local Window = Luna:CreateWindow({
             "uci",
             "iky"
         },
-        FisrtActionText = "Login Key",
-        SecondActionText = "Bergabung Ke WhatsApp",
-        SwapActions = false,
         SecondAction = {
             Enabled = true,
-            Type = "LINK",
+            Type = "Link",
             Parameter = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc"
         }
     }
