@@ -1,6 +1,6 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
 
-Luna.Configuration.InterfaceToggleNotifications = false
+-- Luna.Configuration.InterfaceToggleNotifications = false
 
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
@@ -20,11 +20,9 @@ local Window = Luna:CreateWindow({
             "uci",
             "iky"
         },
-        --[[
         FisrtActionText = "Login Key",
         SecondActionText = "Bergabung Ke WhatsApp",
         SwapActions = false,
-        --]]
         SecondAction = {
             Enabled = true,
             Type = "LINK",
