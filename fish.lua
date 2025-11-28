@@ -42,7 +42,7 @@ local selectedLocation = nil
 
 TeleportTab:Dropdown({
     Title = "Teleport Locations",
-    Desc = "xxxx",
+    Desc = "pilih pulau",
     Values = { "Ocean", "Classic Island [NEW]", "Iron Cavern [NEW]", "Underground", "Sisyphus" },
     Value = "Ocean",
     Callback = function(v)
@@ -52,6 +52,7 @@ TeleportTab:Dropdown({
 
 TeleportTab:Button({
     Title = "Teleport to Selected",
+    Desc = "berpindah ke pulau",
     Callback = function()
         if selectedLocation then
             teleportList[selectedLocation]()
@@ -66,8 +67,9 @@ local FishingTab = Window:Tab({
 
 FishingTab:Input({
     Title = "Set Delay Fishing",
+    Desc = "default: 1",
     Type = "Input",
-    Placeholder = "0.1~2",
+    Placeholder = "0.1 ~ 2",
     Callback = function(v)
         local num = tonumber(v)
         if not num then return end
@@ -84,6 +86,7 @@ FishingTab:Input({
 
 FishingTab:Toggle({
     Title = "Auto Fishing",
+    Desc = "otomatis memancing",
     Default = false,
     Callback = function(s)
         if s then AutoFish.run() else AutoFish.stop() end
@@ -92,6 +95,7 @@ FishingTab:Toggle({
 
 FishingTab:Button({
     Title = "Recovery Fishing",
+    Desc = "memperbaiki bug/crash pancing",
     Callback = function()
         AutoFish.recovery()
     end
@@ -104,6 +108,7 @@ local SettingsTab = Window:Tab({
 
 SettingsTab:Toggle({
     Title = "Anti AFK",
+    Desc = "menghindari putus koneksi",
     Callback = function(s)
         if s then AntiAfk.run() else AntiAfk.stop() end
     end
@@ -111,6 +116,7 @@ SettingsTab:Toggle({
 
 SettingsTab:Toggle({
     Title = "Low Texture",
+    Desc = "smooth & boost fps",
     Callback = function(s)
         if s then LowTexture.run() else LowTexture.stop() end
     end
@@ -118,6 +124,7 @@ SettingsTab:Toggle({
 
 SettingsTab:Toggle({
     Title = "Auto Sell Fish",
+    Desc = "otomatis setiap 1 menit",
     Callback = function(s)
         if s then AutoSell.run() else AutoSell.stop() end
     end
