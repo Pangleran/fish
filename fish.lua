@@ -1,13 +1,11 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
---[[
 WindUI:Gradient({                                                      
     ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            
     ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        
 }, {                                                                            
     Rotation = 0,                                                               
 }),
---]]
 
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
@@ -61,7 +59,7 @@ local Window = WindUI:CreateWindow({
         URL = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc",
         
         -- ↓ Optional. You can remove it.
-        SaveKey = false, -- automatically save and load the key.
+        SaveKey = true, -- automatically save and load the key.
         
         -- ↓ Optional. You can remove it.
         -- API = {} ← Services. Read about it below ↓
