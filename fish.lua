@@ -2,13 +2,13 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 local TeleportModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/teleport.lua"))()
 local LowTexture = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/lowtexture.lua"))()
-local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/rblx/refs/heads/main/antiafk.lua"))()
+local AntiAfk = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/antiafk.lua"))()
 local AutoFish = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/autofish.lua"))()
 local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pangleran/rblx/refs/heads/main/autosell.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "Fish it - Iky Fareza",
-    Theme = WindUI.Themes.Dark
+    Theme = WindUI.Themes.Dark,
 })
 
 local TeleportTab = Window:CreateTab("Teleport")
@@ -21,21 +21,21 @@ local teleportList = {
     ["Sisyphus"] = TeleportModule.ToSisyphus
 }
 
-local selected = nil
+local selectedLocation = nil
 
 TeleportTab:CreateDropdown({
     Title = "Teleport Locations",
-    List = {"Ocean", "Classic Island [NEW]", "Iron Cavern [NEW]", "Underground", "Sisyphus"},
+    List = {"Ocean","Classic Island [NEW]","Iron Cavern [NEW]","Underground","Sisyphus"},
     Callback = function(v)
-        selected = v
+        selectedLocation = v
     end
 })
 
 TeleportTab:CreateButton({
     Title = "Teleport to Selected",
     Callback = function()
-        if selected and teleportList[selected] then
-            teleportList[selected]()
+        if selectedLocation then
+            teleportList[selectedLocation]()
         end
     end
 })
@@ -44,14 +44,18 @@ local FishingTab = Window:CreateTab("Fishing")
 
 FishingTab:CreateInput({
     Title = "Set Delay Fishing",
-    Placeholder = "default: 1",
+    PlaceholderText = "default: 1",
     Callback = function(v)
         local num = tonumber(v)
         if not num then return end
         if num < 0.1 then num = 0.1 end
         if num > 2 then num = 2 end
         AutoFish.SetDelayFishing(num)
-        WindUI:Notify("Set Delay", "to " .. num .. " second")
+        WindUI:Notify({
+            Title = "Set Delay",
+            Content = "to " .. num .. " second",
+            Duration = 2
+        })
     end
 })
 
