@@ -3,7 +3,7 @@ local char = player.Character or player.CharacterAdded:Wait()
 local root = char:WaitForChild("HumanoidRootPart")
 
 -- Titik awal
-local origin = Vector3.new(xxx, xxx, xxx)
+local origin = Vector3.new(-3723.3584, -136.062363, -937.132629)
 root.CFrame = CFrame.new(origin)
 
 task.wait(5)
@@ -25,5 +25,5 @@ local positions = {
 for name, pos in pairs(positions) do
     print("Teleport:", name)
     root.CFrame = CFrame.new(pos)
-    task.wait(5) -- delay antar teleport (bisa kamu kecilkan)
+    task.wait(5)
 end
