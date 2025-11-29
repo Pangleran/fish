@@ -2,6 +2,7 @@ local AutoFish = {}
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
+local VirtualInputManager = game:GetService("VirtualInputManager")
 local net = ReplicatedStorage.Packages._Index["sleitnick_net@0.2.0"].net
 
 local Events = {
@@ -15,7 +16,9 @@ local Events = {
 }
 
 AutoFish.Running = false
+AutoFish.Click = false
 AutoFish.DelayFishing = 1
+AutoFish.ClickDelay = 0.1
 
 function AutoFish.SetDelayFishing(v)
     AutoFish.DelayFishing = v
@@ -54,8 +57,20 @@ function AutoFish.stop()
     end)
 end
 
+function click()
+    Event.equip:FireServer(1)
+    task.wait(0.02)
+    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
+    task.wait(AutoFish.ClickDelay)
+    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
+end
+
 function AutoFish.runv2()
     AutoFish.Running = true
+
+    task.spawn(function()
+        click()
+    end
     
     while AutoFish.Running do
         Events.textfish.OnClientEvent:Connect(function(data)
@@ -65,6 +80,9 @@ function AutoFish.runv2()
                     task.wait(AutoFish.DelayFishing)
                     pcall(function()
                         Events.fishing:FireServer()
+                        task.spawn(function()
+                            click()
+                        end)
                     end)
                 end
             end
