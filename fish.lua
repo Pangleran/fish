@@ -116,8 +116,17 @@ local FishingTab = Window:Tab({
     Locked = false,
 })
 
+FishingTab:Dropdown({
+    Title = "Mode Fishing",
+    Desc = "pilih mode fishing",
+    Values = {"Normal mode", "Speed mode"},
+    Callback = function(v)
+        selectedModeFishing = v
+    end
+})
+
 FishingTab:Input({
-    Title = "Set Delay Fishing",
+    Title = "Delay Speed Mode",
     Desc = "default: 1",
     Type = "Input",
     Placeholder = "0.1 ~ 2",
@@ -143,12 +152,30 @@ FishingTab:Input({
     end
 })
 
-FishingTab:Dropdown({
-    Title = "Mode Fishing",
-    Desc = "pilih mode fishing",
-    Values = {"Normal mode", "Speed mode"},
+FishingTab:Input({
+    Title = "Delay Perfect Normal Mode",
+    Desc = "default: 0.1",
+    Type = "Input",
+    Placeholder = "0.1 ~ 1",
     Callback = function(v)
-        selectedModeFishing = v
+        if selectedModeFishing == "Speed mode" then
+            return WindUI:Notify({
+                Title = "🔴 Invalid",
+                Content = "khusus mode fishing: normal",
+                Duration = 2
+            })
+        end
+        local num = tonumber(v)
+        if not num then return end
+        if num < 0.1 then num = 0.1 end
+        if num > 1 then num = 1 end
+        WindUI:Notify({
+            Title = "✅ Delay Perfect",
+            Content = "to " .. num .. " second",
+            Duration = 2
+        })
+        task.wait(0.5)
+        AutoFish.SetDelayFishing(num)
     end
 })
 
