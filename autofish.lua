@@ -68,7 +68,7 @@ end
 function AutoFish.runv2()
     AutoFish.Running = true
 
-    task.spawn(function() click() end)
+    click()
     
     while AutoFish.Running do
         Events.textfish.OnClientEvent:Connect(function(data)
