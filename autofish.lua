@@ -63,7 +63,7 @@ function AutoFish.runv2()
                 if head and data.Container == head then
                     task.wait(AutoFish.DelayFishing)
                     pcall(function()
-                        tarik:FireServer()
+                        Events.fishing:FireServer()
                     end)
                 end
             end
