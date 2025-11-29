@@ -134,56 +134,63 @@ FishingTab:Input({
     end
 })
 
-FishingTab:Toggle({
-    Title = "Auto Fishing",
-    Desc = "otomatis memancing",
-    Default = false,
-    Callback = function(s)
-        if s then
-            WindUI:Notify({
-                Title = "🟢 Fishing",
-                Content = "mengaktifkan auto fishing",
-                Duration = 2
-            })
-            task.wait(0.5)
-            AutoFish.run()
-        else
-            WindUI:Notify({
-                Title = "🔴 Fishing",
-                Content = "menghentikan auto fishing",
-                Duration = 2
-            })
-            task.wait(0.5)
-            AutoFish.stop()
-        end
+local selectedModeFishing = nil
+
+FishingTab:Dropdown({
+    Title = "Mode Fishing",
+    Desc = "pilih mode fishing",
+    Values = {"Normal mode", "Speed mode"},
+    Value = "Normal mode",
+    Callback = function(v)
+        selectedModeFishing = v
     end
 })
 
 FishingTab:Toggle({
-    Title = "Auto Fishing v2",
-    Desc = "aktifkan auto terlebih dahulu",
+    Title = "Auto Fishing",
+    Desc = "aktifkan mode memancing",
     Default = false,
     Callback = function(s)
+        if selectedModeFishing == nil then return end
         if s then
-            WindUI:Notify({
-                Title = "🟢 Fishing v2",
-                Content = "mengaktifkan auto fishing",
-                Duration = 2
-            })
-            task.wait(0.5)
-            AutoFish.runv2()
+            if selectedModeFishing == "Speed mode" then
+                WindUI:Notify({
+                    Title = "🟢 Speed Fishing",
+                    Content = "mengaktifkan auto fishing",
+                    Duration = 2
+                })
+                task.wait(0.5)
+                AutoFish.run()
+            else
+                WindUI:Notify({
+                    Title = "🟢 Normal Fishing",
+                    Content = "mengaktifkan auto fishing",
+                    Duration = 2
+                })
+                task.wait(0.5)
+                AutoFish.runv2()
+            end
         else
-            WindUI:Notify({
-                Title = "🔴 Fishing v2",
-                Content = "menghentikan auto fishing",
-                Duration = 2
-            })
-            task.wait(0.5)
-            AutoFish.stopv2()
+            if selectedModeFishing == "Speed mode" then
+                WindUI:Notify({
+                    Title = "🔴 Speed Fishing",
+                    Content = "menghentikan auto fishing",
+                    Duration = 2
+                })
+                task.wait(0.5)
+                AutoFish.stop()
+            else
+                WindUI:Notify({
+                    Title = "🔴 Normal Fishing",
+                    Content = "menghentikan auto fishing",
+                    Duration = 2
+                })
+                task.wait(0.5)
+                AutoFish.stopv2()
+            end
         end
     end
 })
-            
 
 FishingTab:Button({
     Title = "Recovery Fishing",
