@@ -122,7 +122,7 @@ FishingTab:Input({
     Type = "Input",
     Placeholder = "0.1 ~ 2",
     Callback = function(v)
-        if selectedModeFishing == nil or selectedModeFishing == "Normal mode" then
+        if selectedModeFishing == "Normal mode" then
             return WindUI:Notify({
                 Title = "🔴 Invalid",
                 Content = "khusus mode fishing: speed",
