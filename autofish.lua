@@ -1,6 +1,7 @@
 local AutoFish = {}
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 local net = ReplicatedStorage.Packages._Index["sleitnick_net@0.2.0"].net
 
 local Events = {
