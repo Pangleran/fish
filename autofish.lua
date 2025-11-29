@@ -60,15 +60,18 @@ end
 function click()
     Events.equip:FireServer(1)
     task.wait(0.02)
-    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
-    task.wait(AutoFish.ClickDelay)
-    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, false, game, 1)
+    while AutoFish.Running do
+        VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
+        task.wait(AutoFish.ClickDelay)
+        VirtualInputManager:SendMouseButtonEvent(700, 250, 0, false, game, 1)
+        task.wait(1)
+    end
 end
 
 function AutoFish.runv2()
     AutoFish.Running = true
 
-    click()
+    task.spawn(function() click() end)
     
     while AutoFish.Running do
         Events.textfish.OnClientEvent:Connect(function(data)
@@ -83,7 +86,6 @@ function AutoFish.runv2()
             end
         end)
         task.wait(0.5)
-        click()
     end
 end
 
