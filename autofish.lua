@@ -62,7 +62,7 @@ function click()
     task.wait(0.02)
     VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
     task.wait(AutoFish.ClickDelay)
-    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
+    VirtualInputManager:SendMouseButtonEvent(700, 250, 0, false, game, 1)
 end
 
 function AutoFish.runv2()
