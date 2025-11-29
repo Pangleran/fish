@@ -41,12 +41,6 @@ local Window = WindUI:CreateWindow({
         Note = "press get key and join whatsapp",
         
         -- ↓ Optional. You can remove it.
-        Thumbnail = {
-            Image = "rbxassetid://124360663785796",
-            Title = "Thumbnail",
-        },
-        
-        -- ↓ Optional. You can remove it.
         URL = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc",
         
         -- ↓ Optional. You can remove it.
