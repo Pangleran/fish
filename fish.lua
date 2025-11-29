@@ -70,6 +70,8 @@ Window:EditOpenButton({
     Draggable = true,
 })
 
+local selectedLocation = nil
+
 local TeleportTab = Window:Tab({
     Title = "Teleport",
     Locked = false,
@@ -82,8 +84,6 @@ local teleportList = {
     ["Underground"] = TeleportModule.ToUnderground,
     ["Sisyphus"] = TeleportModule.ToSisyphus
 }
-
-local selectedLocation = nil
 
 TeleportTab:Dropdown({
     Title = "Teleport Locations",
@@ -109,6 +109,8 @@ TeleportTab:Button({
     end
 })
 
+local selectedModeFishing = nil
+
 local FishingTab = Window:Tab({
     Title = "Fishing",
     Locked = false,
@@ -120,6 +122,13 @@ FishingTab:Input({
     Type = "Input",
     Placeholder = "0.1 ~ 2",
     Callback = function(v)
+        if selectedModeFishing == nil or selectedModeFishing == "Normal mode" then
+            return WindUI:Notify({
+                Title = "🔴 Invalid",
+                Content = "khusus mode fishing: speed",
+                Duration = 2
+            })
+        end
         local num = tonumber(v)
         if not num then return end
         if num < 0.1 then num = 0.1 end
@@ -134,13 +143,10 @@ FishingTab:Input({
     end
 })
 
-local selectedModeFishing = nil
-
 FishingTab:Dropdown({
     Title = "Mode Fishing",
     Desc = "pilih mode fishing",
     Values = {"Normal mode", "Speed mode"},
-    Value = "Normal mode",
     Callback = function(v)
         selectedModeFishing = v
     end
