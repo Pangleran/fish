@@ -175,7 +175,7 @@ FishingTab:Input({
             Duration = 2
         })
         task.wait(0.5)
-        AutoFish.SetDelayFishing(num)
+        AutoFish.ClickDelay(num)
     end
 })
 
