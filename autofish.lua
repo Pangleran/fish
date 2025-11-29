@@ -68,13 +68,15 @@ function click()
     end
 end
 
+local backupFishing = nil
+
 function AutoFish.runv2()
     AutoFish.Running = true
 
     task.spawn(function() click() end)
     
     task.spawn(function()
-        Events.textfish.OnClientEvent:Connect(function(data)
+        backupFishing = Events.textfish.OnClientEvent:Connect(function(data)
             if data and data.TextData and data.TextData.EffectType == "Exclaim" then
                 local head = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
                 if head and data.Container == head then
@@ -91,6 +93,8 @@ end
 
 function AutoFish.stopv2()
     AutoFish.Running = false
+    backupFishing:Disconnect()
+    backupFishing = nil
 end
 
 function AutoFish.recovery()
@@ -100,6 +104,10 @@ function AutoFish.recovery()
         Events.cancel:InvokeServer()
         task.wait()
         Events.unequip:FireServer()
+        task.wait()
+        backupFishing:Disconnect()
+        task.waif()
+        backupFishing = nil
     end
 end
 
