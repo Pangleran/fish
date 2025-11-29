@@ -89,7 +89,6 @@ TeleportTab:Dropdown({
     Title = "Teleport Locations",
     Desc = "pilih pulau",
     Values = { "Ocean", "Classic Island [NEW]", "Iron Cavern [NEW]", "Underground", "Sisyphus" },
-    Value = "Ocean",
     Callback = function(v)
         selectedLocation = v
     end
