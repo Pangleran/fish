@@ -73,7 +73,7 @@ function AutoFish.runv2()
 
     task.spawn(function() click() end)
     
-    while AutoFish.Running do
+    task.spawn(function()
         Events.textfish.OnClientEvent:Connect(function(data)
             if data and data.TextData and data.TextData.EffectType == "Exclaim" then
                 local head = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
@@ -86,7 +86,7 @@ function AutoFish.runv2()
             end
         end)
         task.wait(0.5)
-    end
+    end)
 end
 
 function AutoFish.stopv2()
