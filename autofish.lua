@@ -27,10 +27,10 @@ function AutoFish.run()
             Events.equip:FireServer(1)
             task.wait(0.05)
 
-            Events.charge:InvokeServer(1755848498.4834)
-            task.wait(0.02)
+            Events.charge:InvokeServer(1)
+            task.wait(0.1)
 
-            Events.minigame:InvokeServer(1.2854545116425, 1)
+            Events.minigame:InvokeServer(1, 1)
         end)
 
         task.wait(AutoFish.DelayFishing)
