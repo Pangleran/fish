@@ -8,7 +8,7 @@ local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 
 local Window = WindUI:CreateWindow({
     Title = "Fish it",
-    Icon = "fish",
+    Icon = "rbxassetid://124360663785796",
     Author = "by iky fareza",
     Folder = "fishit_ikyfareza",
     
