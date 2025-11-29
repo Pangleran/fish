@@ -78,12 +78,12 @@ function AutoFish.runv2()
                     task.wait(AutoFish.DelayFishing)
                     pcall(function()
                         Events.fishing:FireServer()
-                        click()
                     end)
                 end
             end
         end)
         task.wait(0.5)
+        click()
     end
 end
 
