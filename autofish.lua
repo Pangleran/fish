@@ -58,7 +58,7 @@ function AutoFish.stop()
 end
 
 function click()
-    Event.equip:FireServer(1)
+    Events.equip:FireServer(1)
     task.wait(0.02)
     VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
     task.wait(AutoFish.ClickDelay)
