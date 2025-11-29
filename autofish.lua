@@ -52,6 +52,29 @@ function AutoFish.stop()
     end)
 end
 
+function AutoFish.runv2()
+    AutoFish.Running = true
+    
+    while AutoFish.Running do
+        result.OnClientEvent:Connect(function(data)
+            if data and data.TextData and data.TextData.EffectType == "Exclaim" then
+                local head = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
+                if head and data.Container == head then
+                    task.wait(AutoFish.DelayFishing)
+                    pcall(function()
+                        tarik:FireServer()
+                    end)
+                end
+            end
+        end)
+        task.wait(0.5)
+    end
+end
+
+function AutoFish.stopv2()
+    AutoFish.Running = false
+end
+
 function AutoFish.recovery()
     if AutoFish.Running == true then
         AutoFish.Running = false
