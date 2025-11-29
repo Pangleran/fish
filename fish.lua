@@ -8,7 +8,7 @@ local AutoSell = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pang
 
 local Window = WindUI:CreateWindow({
     Title = "Fish it",
-    Icon = "door-open",
+    Icon = "fish",
     Author = "by iky fareza",
     Folder = "fishit_ikyfareza",
     
@@ -41,12 +41,10 @@ local Window = WindUI:CreateWindow({
         Note = "press get key and join whatsapp",
         
         -- ↓ Optional. You can remove it.
-        --[[
         Thumbnail = {
-            Image = "rbxassetid://",
+            Image = "rbxassetid://124360663785796",
             Title = "Thumbnail",
         },
-        --]]
         
         -- ↓ Optional. You can remove it.
         URL = "https://chat.whatsapp.com/KWQbg7nK11MHU90SGwGP7z?mode=hqrc",
