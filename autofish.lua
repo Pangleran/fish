@@ -10,6 +10,7 @@ local Events = {
     cancel = net:WaitForChild("RF/CancelFishingInputs"),
     equip = net:WaitForChild("RE/EquipToolFromHotbar"),
     unequip = net:WaitForChild("RE/UnequipToolFromHotbar"),
+    textfish = net:WaitForChild("RE/ReplicateTextEffect"),
 }
 
 AutoFish.Running = false
@@ -56,7 +57,7 @@ function AutoFish.runv2()
     AutoFish.Running = true
     
     while AutoFish.Running do
-        result.OnClientEvent:Connect(function(data)
+        Events.textfish.OnClientEvent:Connect(function(data)
             if data and data.TextData and data.TextData.EffectType == "Exclaim" then
                 local head = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Head")
                 if head and data.Container == head then
