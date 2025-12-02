@@ -73,7 +73,7 @@ local backupFishing = nil
 function AutoFish.runv2()
     AutoFish.Running = true
 
-    -- task.spawn(function() click() end)
+    task.spawn(function() click() end)
     
     task.spawn(function()
         backupFishing = Events.textfish.OnClientEvent:Connect(function(data)
