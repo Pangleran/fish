@@ -64,7 +64,7 @@ function click()
         VirtualInputManager:SendMouseButtonEvent(700, 250, 0, true, game, 1)
         task.wait(AutoFish.ClickDelay)
         VirtualInputManager:SendMouseButtonEvent(700, 250, 0, false, game, 1)
-        task.wait(1)
+        task.wait(0.2)
     end
 end
 
@@ -74,7 +74,8 @@ function AutoFish.runv2()
     AutoFish.Running = true
 
     task.spawn(function() click() end)
-    
+
+    --[[
     task.spawn(function()
         backupFishing = Events.textfish.OnClientEvent:Connect(function(data)
             if data and data.TextData and data.TextData.EffectType == "Exclaim" then
@@ -88,6 +89,7 @@ function AutoFish.runv2()
             end
         end)
     end)
+    --]]
 end
 
 function AutoFish.stopv2()
